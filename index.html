@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulaski Day Parade — New York City | Official Site</title>
+  <meta name="description" content="Official site of the General Casimir Pulaski Memorial Parade Committee. The 89th Annual Pulaski Day Parade, October 4, 2026, 5th Avenue, New York City." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <div>📍 5th Avenue, New York City &nbsp;|&nbsp; October 4, 2026 at 12:30pm</div>
+    <div class="top-bar-right">
+      ✉ <a href="mailto:events@pulaskiparade.org">events@pulaskiparade.org</a>
+      &nbsp;|&nbsp;
+      <a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <div class="navbar-logo">
+          <img src="images/assetsp/main_logo.png" alt="GPMPC Logo" style="width:36px;height:36px;object-fit:contain;border-radius:50%;" onerror="this.parentElement.innerHTML='🦅'" />
+        </div>
+        <div class="navbar-brand-text">
+          <strong>Pulaski Day Parade</strong>
+          <span>New York City · Est. 1937</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="parade.html">Parade ▾</a>
+          <div class="dropdown-menu">
+            <a href="parade.html">2026 Parade Info</a>
+            <a href="program.html">Parade Program</a>
+            <a href="contingents.html">Contingents</a>
+            <a href="gallery.html">Photo Gallery</a>
+          </div>
+        </div>
+        <a href="events.html">Events</a>
+        <a href="membership.html">Membership</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">📖 About</a>
+      <a href="parade.html">🎺 2026 Parade</a>
+      <a href="program.html">📋 Parade Program</a>
+      <a href="contingents.html">🏘 Contingents</a>
+      <a href="events.html">📅 Events</a>
+      <a href="membership.html">🤝 Membership</a>
+      <a href="sponsors.html">⭐ Sponsors</a>
+      <a href="gallery.html">📷 Gallery</a>
+      <a href="contact.html">✉ Contact</a>
+      <a href="mailto:events@pulaskiparade.org" class="btn btn-primary mobile-nav-btn">Email Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-flag-stripe"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span>🇵🇱</span> 89th Annual Parade · 2026
+        </div>
+        <h1>New York City's<br><em>Pulaski Day Parade</em></h1>
+        <p class="hero-theme">
+          "For Our Freedom and Yours" — General Kościuszko &amp; General Pulaski,<br>
+          Soldiers of Liberty for Poland and America —<br>
+          Saluting 250 Years of American Independence
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Sunday, October 4, 2026
+          </div>
+          <div class="hero-meta-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Stepping off 12:30pm
+          </div>
+          <div class="hero-meta-item">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            5th Ave &amp; 41st St, NYC
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="parade.html" class="btn btn-primary btn-lg">Parade Details</a>
+          <a href="parade.html#forms" class="btn btn-secondary btn-lg">Download Forms</a>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-card" id="countdown">
+        <div class="countdown-label">⏳ Countdown to Parade Day</div>
+        <div class="countdown-grid">
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-days">--</span>
+            <small>Days</small>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-hours">--</span>
+            <small>Hours</small>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-minutes">--</span>
+            <small>Min</small>
+          </div>
+          <div class="countdown-unit">
+            <span class="countdown-num" id="cd-seconds">--</span>
+            <small>Sec</small>
+          </div>
+        </div>
+        <div class="countdown-date">
+          <strong>Sunday, October 4, 2026</strong><br>
+          5th Avenue, New York City
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-num">89th</span>
+        <div class="stat-divider"></div>
+        <span class="stat-label">Annual Parade</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">1937</span>
+        <div class="stat-divider"></div>
+        <span class="stat-label">Year Founded</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">5th Ave</span>
+        <div class="stat-divider"></div>
+        <span class="stat-label">New York City</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">250</span>
+        <div class="stat-divider"></div>
+        <span class="stat-label">Years of Independence</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Grand Marshal -->
+<section class="marshal-section section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="eyebrow">2026 Grand Marshal</span>
+      <h2>Dr. Iwona Korga</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="marshal-card">
+      <div class="marshal-photo">
+        <div class="marshal-photo-placeholder">
+          <div class="initials">IK</div>
+          <p style="font-size:.875rem;color:rgba(255,255,255,.75);padding:0 1.5rem;max-width:none;text-align:center;">2026 Grand Marshal</p>
+        </div>
+      </div>
+      <div class="marshal-content">
+        <span class="marshal-year-badge">89th Annual Parade · 2026</span>
+        <h2>Dr. Iwona Korga</h2>
+        <p class="marshal-title">
+          President and Executive Director of the Joseph Piłsudski Institute of America;<br>
+          Treasurer of the Board of Directors of the Polish and Slavic Federal Credit Union
+        </p>
+        <p class="text-muted" style="font-size:.9375rem;margin-bottom:1.5rem;max-width:55ch;">
+          Dr. Korga is a distinguished leader in the Polish-American community, serving in prominent
+          roles at two of Polonia's most important institutions. She was honored at Polish Heritage
+          Night at Gracie Mansion alongside Zygmunt Bielski, Parade Director, by the NYC Mayor.
+        </p>
+
+        <div class="callout callout-info" style="margin-bottom:0;">
+          <span class="callout-icon">ℹ️</span>
+          <div class="callout-body">
+            <h4>Grand Marshal Sashing Ceremony</h4>
+            <p>Photos by Beata Kruzel available via Google Photos. Grand Marshal Ball information: <a href="documents/2026PDFMarshalBall.pdf" style="color:var(--red);">Download PDF</a></p>
+          </div>
+        </div>
+
+        <div class="marshal-bios">
+          <a href="documents/IwonaKorgabioinEnglish.pdf" class="btn btn-outline">
+            📄 Biography (English)
+          </a>
+          <a href="documents/IwonaKorgabioinPolish.pdf" class="btn btn-outline">
+            📄 Biografia (Polish)
+          </a>
+          <a href="parade.html" class="btn btn-primary">
+            Full Parade Details →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Next Meeting -->
+<section class="section--sm info-bar">
+  <div class="container">
+    <div class="flex-between" style="flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <span class="eyebrow" style="color:var(--red);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.5rem;">Next Committee Meeting</span>
+        <h3 style="font-size:1.125rem;margin-bottom:.25rem;">Thursday, April 16, 2026 at 7:30pm</h3>
+        <p style="color:var(--gray-600);font-size:.9375rem;margin:0;">Holy Cross Parish, School Hall · 56-01 61st Street, Maspeth, NY 11378</p>
+      </div>
+      <div class="flex gap-3" style="flex-wrap:wrap;">
+        <a href="documents/2026GPMPCMeetingScheduleasof20260121.pdf" class="btn btn-outline btn-sm">📅 Full 2026 Schedule</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Actions / Features -->
+<section class="section bg-off-white">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="eyebrow">Get Involved</span>
+      <h2>Everything You Need</h2>
+      <div class="divider"></div>
+      <p class="lead">Forms, information, and resources for the 89th Annual Pulaski Day Parade.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🎺</div>
+        <h3 class="card-title">Parade Participation</h3>
+        <p class="card-body" style="margin-bottom:1.25rem;">March in the 89th Annual Pulaski Day Parade on 5th Avenue. Download the participation form and join us October 4, 2026.</p>
+        <a href="documents/2026_ParadeFormTentativeasof20260317.docx" class="btn btn-primary btn-sm">Download Form</a>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">💛</div>
+        <h3 class="card-title">Become a Sponsor</h3>
+        <p class="card-body" style="margin-bottom:1.25rem;">Support Polish heritage and culture in New York City. Multiple sponsorship levels available for organizations and businesses.</p>
+        <a href="sponsors.html" class="btn btn-gold btn-sm">Sponsorship Levels</a>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🤝</div>
+        <h3 class="card-title">Membership</h3>
+        <p class="card-body" style="margin-bottom:1.25rem;">Join the General Casimir Pulaski Memorial Parade Committee. Renewal and new member forms available in Polish and English.</p>
+        <a href="membership.html" class="btn btn-outline btn-sm">Join Today</a>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">📰</div>
+        <h3 class="card-title">Journal Advertising</h3>
+        <p class="card-body" style="margin-bottom:1.25rem;">Advertise in the official Pulaski Day Parade Journal. Download the advertising contract and solicitation letter.</p>
+        <a href="documents/JournalPage.pdf" class="btn btn-outline btn-sm">Journal Contract</a>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">📅</div>
+        <h3 class="card-title">Upcoming Events</h3>
+        <p class="card-body" style="margin-bottom:1.25rem;">Sashing ceremonies, banquets, and marshal balls throughout the tri-state area leading up to the October 4th parade.</p>
+        <a href="events.html" class="btn btn-outline btn-sm">See All Events</a>
+      </div>
+      <div class="card">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🎓</div>
+        <h3 class="card-title">Scholarships</h3>
+        <p class="card-body" style="margin-bottom:1.25rem;">The Pulaski Day Parade Committee supports Polish-American students through scholarship programs. Learn more and apply.</p>
+        <a href="scholarships.html" class="btn btn-outline btn-sm">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming Events Preview -->
+<section class="section">
+  <div class="container">
+    <div class="section-header flex-between" style="align-items:flex-end;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <span class="eyebrow">Spring 2026</span>
+        <h2>Upcoming Events</h2>
+        <div class="divider"></div>
+      </div>
+      <a href="events.html" class="btn btn-outline btn-sm">View All Events →</a>
+    </div>
+
+    <div class="events-list">
+      <div class="event-row">
+        <div class="event-date-block">
+          <div class="month">Apr</div>
+          <div class="day">11</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="event-info">
+          <h4>Staten Island Pulaski Parade Committee — 90th Anniversary Marshal Ball</h4>
+          <p>The Historic Old Bermuda Inn, 301 Veterans Road West, Staten Island, NY 10309</p>
+          <div class="event-time-loc">🕖 7:00pm</div>
+        </div>
+        <span class="badge badge-red">Banquet</span>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date-block">
+          <div class="month">Apr</div>
+          <div class="day">16</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="event-info">
+          <h4>GPMPC Committee Meeting</h4>
+          <p>Holy Cross Parish, School Hall, 56-01 61st Street, Maspeth, NY 11378</p>
+          <div class="event-time-loc">🕖 7:30pm</div>
+        </div>
+        <span class="badge badge-navy">Meeting</span>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date-block">
+          <div class="month">Apr</div>
+          <div class="day">18</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="event-info">
+          <h4>Multiple Marshal Sashing Events</h4>
+          <p>Linden NJ · Our Lady of Consolation Brooklyn · Newark NJ · Hewitt NJ · Long Island · Ridgewood NY</p>
+          <div class="event-time-loc">🕕 Various times — <a href="events.html" style="color:var(--red);">See full list</a></div>
+        </div>
+        <span class="badge badge-gold">Sashing</span>
+      </div>
+
+      <div class="event-row">
+        <div class="event-date-block">
+          <div class="month">Oct</div>
+          <div class="day">4</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="event-info">
+          <h4>🎺 89th Annual Pulaski Day Parade</h4>
+          <p>5th Avenue, New York City — stepping off at 41st Street</p>
+          <div class="event-time-loc">🕧 12:30pm — <strong style="color:var(--red);">THE BIG DAY!</strong></div>
+        </div>
+        <span class="badge badge-red">Parade</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Pulaski -->
+<section class="section bg-navy">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;align-items:center;">
+      <div>
+        <div class="section-header" style="margin-bottom:1.5rem;">
+          <span class="eyebrow" style="color:var(--gold-light);">Our Hero</span>
+          <h2 style="color:var(--white);">General Casimir Pulaski</h2>
+          <div class="divider"></div>
+          <p class="lead" style="color:rgba(255,255,255,.75);">Father of the American Cavalry &amp; Honorary American Citizen</p>
+        </div>
+        <div class="prose" style="color:rgba(255,255,255,.8);font-size:.9375rem;">
+          <p>Casimir Pulaski was born in March 1748, the oldest son of Count Joseph Pulaski. At just 15, he joined his father opposing Russian and Prussian interference in Polish affairs.</p>
+          <p>In Paris, Benjamin Franklin convinced him to support the American colonies — writing to George Washington that Pulaski was "an officer, renowned throughout Europe for the courage and bravery he displayed in defense of his country's freedom."</p>
+          <p>In 1778, Congress established the American Cavalry with Pulaski at its head, earning him the title <strong style="color:var(--gold-light);">"Father of the American Cavalry."</strong> He used his own personal funds to equip his soldiers.</p>
+          <p>He died October 11, 1779, from wounds suffered at the Battle of Savannah. On November 7, 2009, President Barack Obama signed a resolution making him an honorary American citizen — 230 years after his death.</p>
+        </div>
+        <a href="about.html" class="btn btn-gold mt-6">Learn More About Pulaski →</a>
+      </div>
+      <div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:2rem;text-align:center;">
+          <div style="font-size:8rem;line-height:1;margin-bottom:1rem;">⚔️</div>
+          <h3 style="color:var(--gold-light);margin-bottom:.5rem;">Key Dates</h3>
+          <div style="display:flex;flex-direction:column;gap:.75rem;text-align:left;margin-top:1.25rem;">
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-weight:700;color:var(--gold-light);width:40px;flex-shrink:0;">1748</span>
+              <span style="color:rgba(255,255,255,.75);font-size:.9rem;">Born in Poland, son of Count Joseph Pulaski</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-weight:700;color:var(--gold-light);width:40px;flex-shrink:0;">1777</span>
+              <span style="color:rgba(255,255,255,.75);font-size:.9rem;">Arrived in Philadelphia, met General Washington; distinguished at Battle of Brandywine</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-weight:700;color:var(--gold-light);width:40px;flex-shrink:0;">1778</span>
+              <span style="color:rgba(255,255,255,.75);font-size:.9rem;">Congress appointed him head of the American Cavalry — "Father of the American Cavalry"</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-weight:700;color:var(--gold-light);width:40px;flex-shrink:0;">1779</span>
+              <span style="color:rgba(255,255,255,.75);font-size:.9rem;">Died Oct. 11 from wounds at the Battle of Savannah, GA</span>
+            </div>
+            <div style="display:flex;gap:1rem;align-items:flex-start;">
+              <span style="font-weight:700;color:var(--gold-light);width:40px;flex-shrink:0;">2009</span>
+              <span style="color:rgba(255,255,255,.75);font-size:.9rem;">President Obama granted honorary American citizenship</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sponsors Preview -->
+<section class="section section--sm bg-off-white">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="eyebrow">2026 Sponsors</span>
+      <h2>Our Generous Supporters</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="sponsors-grid" style="max-width:960px;margin:0 auto 2rem;">
+      <div class="sponsor-card">
+        <div class="sponsor-num">1</div>
+        <h4>Polish &amp; Slavic Federal Credit Union</h4>
+      </div>
+      <div class="sponsor-card">
+        <div class="sponsor-num">2</div>
+        <h4>Polish Army Veterans of America, District 2</h4>
+      </div>
+      <div class="sponsor-card">
+        <div class="sponsor-num">3</div>
+        <h4>Spencer Savings Bank</h4>
+      </div>
+      <div class="sponsor-card">
+        <div class="sponsor-num">4</div>
+        <h4>Consolidated Edison Company of New York</h4>
+      </div>
+      <div class="sponsor-card">
+        <div class="sponsor-num">5</div>
+        <h4>The Kościuszko Foundation</h4>
+      </div>
+      <div class="sponsor-card">
+        <div class="sponsor-num">6</div>
+        <h4>LOT Polish Airlines</h4>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="sponsors.html" class="btn btn-outline">View All Sponsors &amp; Donors →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Video & Media -->
+<section class="section section--sm">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="eyebrow">Media</span>
+      <h2>Watch &amp; Share</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-3" style="max-width:900px;margin:0 auto;">
+      <a href="https://youtu.be/s480YTPuDAY" target="_blank" rel="noopener" class="card" style="text-decoration:none;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:.75rem;">▶️</div>
+        <h4 class="card-title">"Pulaski, Our Hero"</h4>
+        <p class="card-body" style="font-size:.875rem;">Music by Grzegorz Pyryt, photos by Beata Kruzel</p>
+      </a>
+      <a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener" class="card" style="text-decoration:none;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:.75rem;">📘</div>
+        <h4 class="card-title">Facebook</h4>
+        <p class="card-body" style="font-size:.875rem;">Follow PulaskiParadeNY for photos, news and updates</p>
+      </a>
+      <a href="gallery.html" class="card" style="text-decoration:none;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:.75rem;">📷</div>
+        <h4 class="card-title">Photo Gallery</h4>
+        <p class="card-body" style="font-size:.875rem;">Browse historic parade photos from 2008 to present</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>General Casimir Pulaski<br>Memorial Parade Committee</h3>
+        <p>The GPMPC, Inc. organizes the Annual Pulaski Day Parade on 5th Avenue in New York City, celebrating the heritage of General Casimir Pulaski — Father of the American Cavalry — and the Polish-American community.</p>
+        <p><strong style="color:rgba(255,255,255,.9);">President:</strong> Richard Zawisny<br>
+        <strong style="color:rgba(255,255,255,.9);">VP &amp; Parade Director:</strong> Zygmunt Bielski</p>
+        <div class="footer-sponsor">
+          <span>🤝</span>
+          <span>Sponsored by <a href="https://www.psfcu.com" target="_blank" rel="noopener" style="color:var(--gold-light);">Polish &amp; Slavic Federal Credit Union</a></span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="parade.html">2026 Parade</a></li>
+          <li><a href="program.html">Parade Program</a></li>
+          <li><a href="events.html">Event Calendar</a></li>
+          <li><a href="contingents.html">Contingents</a></li>
+          <li><a href="gallery.html">Photo Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="documents/2026_ParadeFormTentativeasof20260317.docx">Parade Form</a></li>
+          <li><a href="documents/2026GPMPCMeetingScheduleasof20260121.pdf">Meeting Schedule</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:events@pulaskiparade.org">✉ events@pulaskiparade.org</a></li>
+          <li><a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener">📘 Facebook</a></li>
+          <li><a href="https://youtu.be/s480YTPuDAY" target="_blank" rel="noopener">▶ YouTube</a></li>
+        </ul>
+        <div style="margin-top:1.25rem;">
+          <h4>Polish Community</h4>
+          <ul>
+            <li><a href="https://pac1944.org" target="_blank" rel="noopener">Polish American Congress</a></li>
+            <li><a href="https://polishculturalfoundation.org" target="_blank" rel="noopener">Polish Cultural Foundation</a></li>
+            <li><a href="https://www.psfcu.com" target="_blank" rel="noopener">PSFCU</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 General Casimir Pulaski Memorial Parade Committee, Inc. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        <a href="mailto:events@pulaskiparade.org" aria-label="Email">✉</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
