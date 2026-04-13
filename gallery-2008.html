@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2008 Photo Gallery — Pulaski Day Parade</title>
+  <meta name="description" content="Photos from the 2008 Pulaski Day Parade, 5th Avenue, New York City, October 5, 2008." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .gallery-hidden{display:none!important}
+    /* .photo-item mirrors .gallery-item styles */
+    .photo-item{aspect-ratio:4/3;background:var(--gray-200);border-radius:var(--radius);position:relative;cursor:pointer;overflow:hidden;}
+    .photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+    .photo-item:hover img{transform:scale(1.05);}
+    .photo-item-overlay{position:absolute;inset:0;background:rgba(0,0,0,.4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.875rem;letter-spacing:.05em;opacity:0;transition:opacity .25s ease;}
+    .photo-item:hover .photo-item-overlay{opacity:1;}
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>5th Avenue, New York City &nbsp;|&nbsp; October 4, 2026 at 12:30pm</div>
+    <div class="top-bar-right"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg><a href="mailto:events@pulaskiparade.org">events@pulaskiparade.org</a></div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <div class="navbar-logo"><span style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--white);" aria-hidden="true">P</span></div>
+        <div class="navbar-brand-text">
+          <strong>Pulaski Day Parade</strong>
+          <span>New York City · Est. 1937</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="parade.html" class="active">Parade ▾</a>
+          <div class="dropdown-menu">
+            <a href="parade.html">2026 Parade Info</a>
+            <a href="program.html">Parade Program</a>
+            <a href="contingents.html">Contingents</a>
+            <a href="gallery.html">Photo Gallery</a>
+          </div>
+        </div>
+        <a href="events.html">Events</a>
+        <a href="membership.html">Membership</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="parade.html">2026 Parade</a>
+      <a href="events.html">Events</a>
+      <a href="membership.html">Membership</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>&#8250;</span> <a href="gallery.html">Photo Gallery</a> <span>&#8250;</span> <span>2008</span>
+    </div>
+    <h1>2008 Photo Gallery</h1>
+    <p class="lead">Photos from the General Casimir Pulaski Memorial Parade, 5th Avenue, New York City, October 5, 2008.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">October 5, 2008</span>
+      <h2>2008 Pulaski Day Parade</h2>
+      <div class="divider"></div>
+      <p class="lead" style="font-size:.9375rem;">5th Avenue, New York City &mdash; 334 photos.</p>
+    </div>
+    <div class="gallery-grid" id="grid-2008-parade"></div>
+    <div class="text-center mt-6" id="wrap-btn-parade">
+      <button class="btn btn-outline" id="btn-parade" onclick="loadMore('grid-2008-parade','wrap-btn-parade')">Load More Parade Photos</button>
+    </div>
+
+    <h3 style="margin:3rem 0 .75rem;color:var(--navy);">More 2008 Parade Photos</h3>
+    <p style="margin-bottom:1.5rem;color:var(--gray-600);font-size:.9375rem;">Additional photographs from the 2008 parade &mdash; 163 photos.</p>
+    <div class="gallery-grid" id="grid-2008-more"></div>
+    <div class="text-center mt-6" id="wrap-btn-more">
+      <button class="btn btn-outline" id="btn-more" onclick="loadMore('grid-2008-more','wrap-btn-more')">Load More Photos</button>
+    </div>
+
+    <h3 style="margin:3rem 0 .75rem;color:var(--navy);">2008 Pulaski Parade Banquet</h3>
+    <p style="margin-bottom:1.5rem;color:var(--gray-600);font-size:.9375rem;">Marriott Marquis Hotel, Broadway Ballroom, New York City &mdash; 134 photos.</p>
+    <div class="gallery-grid" id="grid-2008-banquet"></div>
+    <div class="text-center mt-6" id="wrap-btn-banquet">
+      <button class="btn btn-outline" id="btn-banquet" onclick="loadMore('grid-2008-banquet','wrap-btn-banquet')">Load More Banquet Photos</button>
+    </div>
+
+    <div class="text-center mt-6">
+      <a href="gallery.html" class="btn btn-outline">&larr; Back to Photo Gallery</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>General Casimir Pulaski<br>Memorial Parade Committee</h3>
+        <p>Celebrating Polish-American heritage since 1937 on 5th Avenue, New York City.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="parade.html">2026 Parade</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contingents.html">Contingents</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:events@pulaskiparade.org"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>events@pulaskiparade.org</a></li>
+          <li><a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 General Casimir Pulaski Memorial Parade Committee, Inc.</div>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" aria-label="Back to top">&#8593;</button>
+
+<script>
+
+/* ---- gallery data ---- */
+const PARADE_PREFIX  = "2008_General_Casimir_Pulaski_Memorial_Parade_5th_Avenue,_New_York_City_October_5,_2008_";
+const MORE_PREFIX    = "2008_General_Casimir_Pulaski_Memorial_Parade_5th_Avenue,_New_York_City_October_5,_2008_more_pictures_=_";
+const BANQUET_PREFIX = "2008_General_Casimir_Pulaski_Memorial_Parade_Committee_Banquet_2008_Marriott_Marquis_Hotel,_New_York_City_Broadway_Ballroom_";
+const OTHER_FILES    = ["2008_Ryszard_Zawistny_2df4c5f36f.jpg"];
+const PARADE_HASHES  = ["004459af8d", "005fc9fad1", "054ebad900", "05afbbe052", "05b2fb3edd", "09923729a5", "0a764e0d21", "0a9aa0b3b9", "0ad8c57fb5", "0af301f4aa", "0b185b2ca5", "0bb4cfc5f4", "0c68f37da3", "0cd3b3ef7d", "0d66af523e", "0fc4b2c589", "104b6fbb83", "1108333572", "1201bd6412", "12dc252cb3", "133b18ea9a", "142d77cdb6", "172e2fceaa", "1752aac6c5", "17e9a4c2e6", "18683408b6", "194e03769e", "1d7cc60cd4", "1f4490cecf", "1fb83ac506", "2012e8e9e8", "2194aaa3f2", "24539fd24f", "2493bb5dfe", "24ce2596c2", "24e0849ea5", "25c386ecda", "2625e8613a", "262714e794", "26ac31cba1", "27238407da", "276a895174", "276c57ab16", "279b2ecadd", "27ab1f2f9e", "280758c8cd", "281570afed", "28f0324c74", "290d58126c", "292d634a5c", "2936b70643", "299779d27f", "2b5b3dd208", "2bb1c60222", "2c0a357b87", "2c65949030", "2cb9a0b4ae", "2cef704c7f", "2d24f9b2d4", "2d4d7f4e6a", "2dabf7bcb2", "2dbcbf052b", "3245ca17a5", "3456dc6494", "34eb08f16e", "361fdf291c", "366b8cf734", "367e019dfa", "36fcedd4ea", "3839fc9804", "38bdd72273", "38bddc1d8c", "38ea721488", "394d06024a", "3c5fac6bdd", "3e1b6c7059", "3ee303427c", "3fc1b18b7f", "3feaabb52b", "41fa783e65", "4422d329f9", "44f53cb474", "4551834b9c", "464669cbc7", "466edc4331", "482c517264", "490743bcf1", "49398e9c15", "4a542cdb0c", "4a6210584b", "4bf5d372e7", "4c53a90726", "4c6297fe84", "4c65b2d209", "4daec79ba1", "4dc69d5a1a", "4e12fc9c52", "4e59010ce8", "4f0b45beb9", "4fa211ebe9", "505171c8aa", "5101483fa6", "51b5ff5b93", "51cc1ba222", "51d00e47ed", "5277d76dc7", "530671debe", "535063cb8c", "5362764e30", "53e1e165e1", "54209bb17d", "542ae2ef34", "544ad775e0", "547e4595a4", "54c5442605", "54f9cc4780", "550b5a50cc", "558445399b", "55ba639f96", "55ddd228f8", "569d5aa069", "56fd083dd4", "5707b10218", "57856c4ee0", "57aaef3ad7", "57f9ec6ed2", "59a3b66649", "5ad96ef929", "5add263ad2", "5b5c637f53", "5d3b7f6f5e", "5f8709787c", "5fbbbb8d3f", "6078e4c250", "62f602e0d5", "645e5abb84", "647bf56f3e", "64ea5f47fe", "6512ddeb84", "67636b8ff5", "6b9c727248", "6f5e1aa0b9", "6f80c67dc4", "7058a3c9b6", "713e487a12", "722ea3ba9b", "72edfc8cb6", "736093c4ed", "73f38248e6", "75e3e5297e", "76ba206802", "7748083e29", "784ace955c", "78c25de09b", "78cb1614d2", "791bc52b1d", "7980444a00", "7b10dc9eea", "7b1fc5ed29", "7c0a0fe489", "7c6fad53d2", "7deba9d85f", "7e13210a05", "7e54b5b557", "7f5c2999eb", "7f700d9680", "7fdfcc6e77", "8114164c54", "83cd561544", "85cd97a6dd", "869c97ddac", "871df204ac", "873916230c", "87b4149071", "87dc380018", "890e754bc1", "89ad650ad0", "8a3c628e53", "8a4ef2507f", "8b4b357cf7", "8b8af6f1eb", "8c5e59a6ce", "8dd48062dc", "8fa5ab6266", "9185fb03d1", "9205e2a615", "9260fb74ba", "930676c469", "94354316db", "953c41ca12", "956cdbc611", "97b63dd541", "97e2fcfbf5", "98ca1781f3", "99c9b6f189", "9aba7c5c80", "9ac9fc5038", "9b77f9d799", "9d5f7437a6", "9f1fbe6f53", "9f65e08eab", "a0829f1e9a", "a1ae45f316", "a266861ec0", "a2c828e26c", "a3113b3b52", "a38abbda75", "a3917c301f", "a45826fc2b", "a4cb0ef513", "a52f136fd5", "a5d8b13d10", "a69af74599", "a822a8a9c6", "a865866675", "a8d273d43b", "a9946c2a9f", "abecfc20f5", "abf90b02d9", "ace81eb523", "ad5f0789ce", "aec5bffec8", "afb5a0263c", "b02308e867", "b1224de7ed", "b1b078eb3e", "b3c409aee1", "b4b4d8bf7e", "b59d830651", "b67665a91e", "b7a3a4dde9", "b929cb4b6a", "ba08972b96", "bb62e50b76", "bb89fbc531", "bd22d1fd39", "bdec07df79", "be09d0dfda", "be51f912a4", "bf8a9326cb", "c03fe2bb0e", "c0529d877a", "c1b1e5357c", "c1cf087448", "c2cb865676", "c3884e4254", "c43baf152b", "c44bc274a7", "c5bec79a5c", "c76ad87210", "c89cd39ec1", "c89f7e6c7d", "cca0e3bdd9", "cd598ac480", "cdb01ec449", "cdc07d02ee", "cdff4afa92", "cfb948d59c", "d033c7d50e", "d08e6170c4", "d138f33123", "d25a327596", "d29bcf0d2e", "d402ab5dad", "d4398da766", "d4a8f4c054", "d4ee0456fc", "d5094a2faa", "d536cbfc1d", "d59ae9775f", "d78fe57e21", "d841fb0f3c", "d84676f9ee", "d847b476ff", "d89bf64f0e", "d89f396082", "d8a56fed1b", "dc07ae6550", "dc504607b5", "dcb890a5c9", "dce9937dee", "dd3d3e6832", "ddb483e634", "de417247ac", "e01ef0482b", "e09c715ecc", "e0c1c9d8d9", "e10d25cffb", "e19c127bc8", "e2129de109", "e369141004", "e66280f08e", "e6d4da2c7a", "e80126984e", "e945ec88c5", "e9a99fb930", "ea2f5ab6af", "eaad67ab0f", "eb21928113", "eb2c37d848", "ebccb55af1", "ee256efc8b", "ee8e2ee74d", "ef02b9a488", "f0a8734202", "f1498f5c49", "f241619199", "f2eb44e2a0", "f348aab929", "f373924840", "f3c1d8c5c0", "f4b48588cb", "f5b0480b4e", "f64b226599", "f68ef0930e", "f6a7a55917", "f6ceec90d0", "f7318b0a68", "f7a3284a99", "f834ba3045", "f8f6b45e28", "f91c856657", "f9fbc8e05e", "fab180778e", "fb5102d856", "fb81eb36e9", "fb95d9053a", "fba2748225", "fbd6410e81", "fc2f9c7af1", "fc5cc72f0e", "fc5e91615c", "fe14cb67d0", "feaafca26f"];
+const MORE_HASHES    = ["004ee81f36", "00534d1080", "005d8776f2", "00d61c7449", "00ebd025cc", "03032e581d", "055aee0819", "0c1244894a", "0e5b4bcf2e", "0ef6a89da8", "110e1b843e", "12c3b8a235", "16717d4726", "184592ec2c", "1ea4cd5449", "24636a877c", "25d254d4a3", "25ef9f530b", "2705f989db", "27321362c6", "29245fa3a2", "29f5e28b44", "2ad6f91b10", "2b44ef2154", "2c96b17383", "2dc19003f4", "2f7fa26a53", "2f844ab121", "2fdd8cf034", "308a0ab8ed", "36fe4a84f1", "371616856b", "3903722076", "3aa08450f4", "3b5803d50d", "3c680c55ac", "3d46d68061", "3ff6ca8177", "42cbe61b1d", "43f622cac9", "44376331b9", "44de823c77", "45824c96ce", "4714077e9e", "4a896095a7", "4a969ea2da", "4af84faa15", "5018a9c231", "509aea4d4e", "52b0529176", "534e5bec52", "53c0905053", "555b47160e", "57e5c322d8", "5824258757", "5870e5c8fe", "5909191eee", "59d894d343", "5bd9eca71a", "5cc13f6600", "5df8d69384", "5f09eddc0b", "644f6240a0", "6473902db7", "68b43df681", "68b554cfa8", "6c0514f950", "6c109799a8", "6c740083eb", "6ded0e10cb", "6e96b98bae", "71341b2a1d", "72a484be89", "73d199a722", "7655c1b51e", "7776f11ea1", "79fb22f3e6", "810d1883cc", "8390029bc8", "84ddaed26a", "85df7172ca", "861c4e77f5", "8764352269", "882edc0b87", "8b2f9deb32", "8bb1b94f57", "8c8c06c742", "8cc65abb71", "8fca4979e8", "927b799136", "9446b96679", "9731243bcc", "97e82acbd6", "9875c95663", "98806d34f9", "9b784f8a9e", "9ba5e6567b", "9f34c37a0d", "9f59d9d36e", "a0ab70a29d", "a33cbfa80e", "a349c289c2", "a38c28a4e1", "a62aa756ab", "a78f2e8533", "a7cd38d03b", "a837b67c87", "a8dcf200dd", "aadc2b66cc", "abcaaf916f", "ac45f0e2fe", "b148671964", "b1d376f982", "b4c63066b9", "b53745e410", "b53b8663d5", "b6214c8417", "b699f82996", "bb9003c391", "bcfd6d39af", "bdc9cc8470", "becf2b6102", "bf9fbaf53e", "c1af9aa903", "c1b305fa40", "c2e8c8f0b3", "c5cc5ee4f3", "c73532c0aa", "c7def9d3e6", "c933f4aa19", "ca981c7177", "caf0d6fc80", "cb22fec8cb", "cc83209fdd", "ccfa020df5", "cddde043fc", "cff6b4fd2a", "d034f9c2dc", "d04db85d5c", "d2180d0a49", "d226bc2263", "d49de1f9e6", "d7bc0625cb", "d9d809528f", "e0b934bfdc", "e178a0ec45", "e1f12c1437", "e25d1a89d6", "e42839fa7b", "e48b04ebe5", "e4daa190dd", "e983cb35a8", "ec1eed55db", "eda826e749", "ee8d2541f2", "ef5503c758", "f52169a08d", "f81f740f76", "f91fe2a21d", "fa673174d7", "fabf2df115", "fb148bfaf6", "fc77b5ed18"];
+const BANQUET_HASHES = ["02df10a5e2", "06b991e5c8", "0945f8dbb8", "09e8d56a91", "0a3575db7d", "0b30134588", "0bcac01f3a", "0d2a421804", "1314e3f1b3", "163cddf45b", "1850565508", "1d4257fc90", "208d48d705", "26027be85e", "26387b0ad0", "2924384c15", "2c3efce31d", "30afde8050", "3434d824b9", "360b93ac1d", "383cd93a74", "3cf6599431", "41b91f3e5c", "48067bec44", "4a13f2a3e9", "53beb33935", "553e2bbeaa", "5651ea2a8c", "5880f42f77", "5989afeb0b", "5c91943a12", "5caaaecee1", "651fd73f31", "6d43428413", "6e54061d6d", "70febfa542", "72796b59e5", "7a08c85afd", "7c41f91524", "807600af61", "80bc9e63ea", "83c8417821", "8675881a3c", "8a84d7fd7a", "8c60c79d07", "8e3e1b83c8", "900927c26a", "9255d2480a", "92f294ef26", "931b747dda", "95fe2bea51", "96d0b8fc8c", "9a2d4b7bca", "9db2c0281e", "9de55245f4", "9e4e52ec2b", "a061f9cbe0", "a0b683e145", "a1c4ebe037", "a589f77aa1", "a9802f6fda", "b09751b81a", "b26f3a2398", "b3d1a58fca", "b6051f0532", "b93aeb3cc7", "ba88b17354", "c2c858cfc7", "c4a70b742a", "c5511b3318", "c7b70ecaba", "d05f4d936b", "d12993994f", "d46cff285a", "d768b0f907", "de4fcd904d", "e2a47008d7", "e3857e3940", "e41e890fe6", "e5bac11cff", "e78468c546", "e93aa3eb56", "ea2c9a056b", "eb2a76328b", "ef3a36746c", "f23c288694", "fa5b2c34e0", "fa6140c372", "fd578514db", "fded9dcd8d", "02e3141489", "0673f3b7c2", "22b5f8554c", "2f5501f83d", "2fddb8bd00", "303a7e6edd", "39fe00975c", "3c2ff00a7c", "468f43afc8", "55a934bd64", "5d834d2c43", "5fbb33cb2f", "6498de66dd", "790c0dff58", "7d0fd925d1", "7da945c776", "7f3d52eed4", "84e74e7d0a", "85a2d6efe6", "93ce83e515", "9a43ac08b9", "9d3a69c8cb", "9ffade9099", "a4ac43adb7", "a9fb3b3a12", "aab1aee72c", "ab4b1aa874", "abb03f2e75", "b13985972c", "b1f9efbdcb", "b54c1c10fc", "b740c4053a", "b7d33d5db9", "b9b7c9f324", "ba4357be04", "bb86fe4bce", "d44d559d47", "d57ef09af2", "e4332dd454", "e59c4308d9", "ea240427e9", "f490583bca", "f5fed1702e"];
+
+/* ---- render ---- */
+const BATCH = 24;
+function renderSection(gridId, prefix, hashes, altText, extra) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  const all = hashes.map(h => prefix + h + '.jpg');
+  if (extra) extra.forEach(f => all.push(f));
+  all.forEach((fname, i) => {
+    const div = document.createElement('div');
+    div.className = i < BATCH ? 'photo-item' : 'photo-item gallery-hidden';
+    div.dataset.src = 'images/' + fname;
+    div.dataset.alt = altText;
+    const esc = fname.replace(/&/g, '&amp;');
+    div.innerHTML = '<img src="images/' + esc + '" loading="lazy" alt="' + altText + '" />'
+                  + '<div class="photo-item-overlay">View</div>';
+    grid.appendChild(div);
+  });
+}
+
+/* ---- load more ---- */
+function loadMore(gridId, wrapId) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  let count = 0;
+  grid.querySelectorAll('.gallery-hidden').forEach(el => {
+    if (count < BATCH) { el.classList.remove('gallery-hidden'); count++; }
+  });
+  if (!grid.querySelector('.gallery-hidden')) {
+    const w = document.getElementById(wrapId);
+    if (w) w.style.display = 'none';
+  }
+}
+
+/* ---- lightbox with prev/next ---- */
+(function() {
+  const ov = document.createElement('div');
+  ov.id = 'lb';
+  ov.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;';
+  ov.innerHTML = '<button id="lb-prev" aria-label="Previous" style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.5rem;cursor:pointer;line-height:1;">&#8249;</button>'
+    + '<img id="lb-img" alt="" style="max-width:calc(100vw - 140px);max-height:90vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);" />'
+    + '<button id="lb-next" aria-label="Next" style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.5rem;cursor:pointer;line-height:1;">&#8250;</button>'
+    + '<button id="lb-close" aria-label="Close" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.25rem;cursor:pointer;line-height:1;">&#x2715;</button>'
+    + '<div id="lb-cnt" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:.875rem;"></div>';
+  document.body.appendChild(ov);
+
+  const lbImg = ov.querySelector('#lb-img');
+  const lbCnt = ov.querySelector('#lb-cnt');
+  let all = [], cur = 0;
+
+  function visible() {
+    return Array.from(document.querySelectorAll('.photo-item:not(.gallery-hidden)[data-src]'));
+  }
+  function show(i) {
+    all = visible();
+    cur = Math.max(0, Math.min(i, all.length - 1));
+    lbImg.src = all[cur].dataset.src;
+    lbImg.alt = all[cur].dataset.alt || '';
+    lbCnt.textContent = (cur + 1) + ' / ' + all.length;
+    ov.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function close() { ov.style.display = 'none'; document.body.style.overflow = ''; lbImg.src = ''; }
+
+  document.addEventListener('click', e => {
+    const item = e.target.closest('.photo-item[data-src]');
+    if (!item) return;
+    all = visible();
+    show(all.indexOf(item));
+  });
+  ov.querySelector('#lb-prev').addEventListener('click',  e => { e.stopPropagation(); show(cur - 1); });
+  ov.querySelector('#lb-next').addEventListener('click',  e => { e.stopPropagation(); show(cur + 1); });
+  ov.querySelector('#lb-close').addEventListener('click', close);
+  ov.addEventListener('click', e => { if (e.target === ov) close(); });
+  document.addEventListener('keydown', e => {
+    if (ov.style.display !== 'flex') return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+})();
+
+/* ---- init ---- */
+renderSection('grid-2008-parade',  PARADE_PREFIX,  PARADE_HASHES,  '2008 Pulaski Day Parade — 5th Avenue, New York City', null);
+renderSection('grid-2008-more',    MORE_PREFIX,    MORE_HASHES,    '2008 Pulaski Day Parade — More Photos', null);
+renderSection('grid-2008-banquet', BANQUET_PREFIX, BANQUET_HASHES, '2008 Pulaski Parade Banquet — Marriott Marquis Hotel', OTHER_FILES);
+
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

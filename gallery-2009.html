@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2009 Photo Gallery — Pulaski Day Parade</title>
+  <meta name="description" content="Photos from the 2009 Pulaski Day Parade, New York City." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .gallery-hidden{display:none!important}
+    .photo-item{aspect-ratio:4/3;background:var(--gray-200);border-radius:var(--radius);position:relative;cursor:pointer;overflow:hidden;}
+    .photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+    .photo-item:hover img{transform:scale(1.05);}
+    .photo-item-overlay{position:absolute;inset:0;background:rgba(0,0,0,.4);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.875rem;letter-spacing:.05em;opacity:0;transition:opacity .25s ease;}
+    .photo-item:hover .photo-item-overlay{opacity:1;}
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>5th Avenue, New York City &nbsp;|&nbsp; October 4, 2026 at 12:30pm</div>
+    <div class="top-bar-right"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg><a href="mailto:events@pulaskiparade.org">events@pulaskiparade.org</a></div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-brand">
+        <div class="navbar-logo"><span style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--white);" aria-hidden="true">P</span></div>
+        <div class="navbar-brand-text">
+          <strong>Pulaski Day Parade</strong>
+          <span>New York City · Est. 1937</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="nav-dropdown">
+          <a href="parade.html" class="active">Parade ▾</a>
+          <div class="dropdown-menu">
+            <a href="parade.html">2026 Parade Info</a>
+            <a href="program.html">Parade Program</a>
+            <a href="contingents.html">Contingents</a>
+            <a href="gallery.html">Photo Gallery</a>
+          </div>
+        </div>
+        <a href="events.html">Events</a>
+        <a href="membership.html">Membership</a>
+        <a href="sponsors.html">Sponsors</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="parade.html">2026 Parade</a>
+      <a href="events.html">Events</a>
+      <a href="membership.html">Membership</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>&#8250;</span> <a href="gallery.html">Photo Gallery</a> <span>&#8250;</span> <span>2009</span>
+    </div>
+    <h1>2009 Photo Gallery</h1>
+    <p class="lead">Photos from the General Casimir Pulaski Memorial Parade, New York City, 2009.</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="eyebrow">2009</span>
+      <h2>2009 Pulaski Day Parade Photos</h2>
+      <div class="divider"></div>
+      <p class="lead" style="font-size:.9375rem;">255 photos from the 2009 Pulaski Day Parade.</p>
+    </div>
+    <div class="gallery-grid" id="grid-2009-main"></div>
+    <div class="text-center mt-6" id="wrap-btn-main">
+      <button class="btn btn-outline" id="btn-main" onclick="loadMore('grid-2009-main','wrap-btn-main')">Load More Photos</button>
+    </div>
+
+    <h3 style="margin:3rem 0 .75rem;color:var(--navy);">"For Freedom — Yours and Ours"</h3>
+    <p style="margin-bottom:1.5rem;color:var(--gray-600);font-size:.9375rem;"><em>Za Wolno&#347;&#263; — Wasz&#261; i Nasz&#261;</em> &mdash; A photo from the 2009 parade.</p>
+    <div class="gallery-grid" id="grid-2009-freedom"></div>
+
+    <div class="text-center mt-6">
+      <a href="gallery.html" class="btn btn-outline">&larr; Back to Photo Gallery</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>General Casimir Pulaski<br>Memorial Parade Committee</h3>
+        <p>Celebrating Polish-American heritage since 1937 on 5th Avenue, New York City.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="parade.html">2026 Parade</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contingents.html">Contingents</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="scholarships.html">Scholarships</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:events@pulaskiparade.org"><svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>events@pulaskiparade.org</a></li>
+          <li><a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener"><svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 General Casimir Pulaski Memorial Parade Committee, Inc.</div>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTop" aria-label="Back to top">&#8593;</button>
+
+<script>
+
+const MORE09_PREFIX  = "2009_more_pictures_____Home_";
+const MORE09_HASHES  = ["0049db6bb1", "01756b596d", "01aac18282", "0266e21428", "02daec9517", "030c42b6d4", "035f9b3a9b", "03e8caed89", "046a1da025", "0552a04223", "074c13a147", "0771671583", "098b3169e2", "0ab423c256", "0b3f2ba374", "0b41e40f44", "0cb47cd065", "0ec82556a0", "0fda8b9caf", "10d630143b", "116a470421", "12066095f9", "13b0046349", "143379ce7d", "145476d055", "15936de44f", "179c04e08a", "17b2bba635", "185b018f5f", "19fa991daa", "1a1630a76d", "1b8dfadf2e", "1bf8ec2eef", "1c1abaca31", "1ff86bf753", "20e8f0d563", "20f480a4e8", "20f643773e", "2116552d2b", "222662d7e2", "223822d57e", "2404922e2b", "244ecff5ee", "25a8285079", "272c779acd", "28e2469313", "2b1e63a8d2", "2e2aa1ff2d", "2eb5ff50f6", "2eee5c06d9", "2f9b72fd91", "2fed0c3194", "3070c93a13", "3192915f21", "3209c0608c", "357ea493d8", "3638680aec", "37dd449eae", "37f39b3fc1", "38547a2482", "3910761cec", "3bef06a579", "3c43a2bfe8", "3cc1cfc51f", "3ce0c1f5e8", "3ef2237379", "42961e38aa", "42c550d4a6", "450b294024", "47b5ea5e86", "47fecd3d90", "482486ed1f", "4a178f6954", "4b24799128", "4c3120ee46", "4c323d933d", "4e5ca2d409", "4e8135d327", "4f80a007d1", "4fe7beeb53", "50c9852cb1", "52d2596251", "53445973c6", "545aff6476", "549bfd99a4", "553d09368a", "55c6bca58d", "589cc7a56e", "595fd45381", "598c1d0ccf", "5a1683e0cc", "5a7c104f7f", "5d0be2358d", "5d3515d3e5", "5daf2d2542", "5ec9b6f3ad", "5eeea35869", "5f3b9f5f1c", "6512637079", "655e140e1d", "65d0b18183", "6625fb6b9f", "664f0591a8", "67145e6700", "6790a276dd", "695f6e6961", "699cbaa0c2", "6b8e0726a2", "6c2ba9970c", "6c31a33134", "6c8d854de4", "6cc1ee00c9", "6d9d9f8aa8", "6da528b0c4", "6f4d31c14e", "6fafe4900a", "6fb7389f13", "6fe5c76d6e", "70230b73af", "70654c3aa0", "70dc229772", "717e92bc6b", "72bc0a596f", "7323cd82bb", "748898dbb1", "74b527eaca", "74f4293ffe", "759115f734", "7a13984e71", "7bdf748560", "7d69e71c4b", "7e26622b8b", "7e6a2ad7e5", "7eda42a572", "7f3b9f08d5", "7f40c0e636", "7fa845a3bc", "81db210f3c", "81f422f1c1", "8345365511", "840d37ffc5", "84b209abd1", "84c8bc5c9e", "85020b7b8b", "86052766b4", "86784e7f76", "877e802a5c", "87e607db80", "88dc6579df", "8a0660d04b", "8a681809bb", "8bab089b81", "8bab68a98e", "8c017daed2", "8cf49f3d0c", "8d521f7cd7", "8d6b971195", "8e53946993", "8ea00c470a", "8ef65d102b", "8f8ff9a08c", "90817e8444", "90a476dc75", "916e01a3b9", "9170828a3d", "929d708903", "92bb32939e", "93c880e984", "9400ccaa52", "96dca4e3ce", "97a92ac432", "97bfa950f9", "9890497218", "9a1313899e", "9db1e11e7d", "9de8fc15a2", "9e11ca0023", "9efdbc6549", "9f01898f6a", "a284c85a05", "a4d44bff69", "a6423931ba", "a9b8d4b4dd", "aa96cdb5bc", "abb2155624", "aed27222ea", "af279e29cd", "af40527780", "b0d39fa013", "b1084b7e48", "b186b91d00", "b382bdebdb", "b76b05d286", "b9b2c08b0b", "bbcd4a7c06", "bbe1ae3df3", "c01b46549d", "c33840a16f", "c8856d9450", "c889cbb268", "c8a39de019", "c8d97767d3", "c917c3b1d8", "cb4f4e4ef3", "cd809fb9a2", "cd9e82b5ee", "cdb3096872", "cf1f13b9b5", "cfdbe5b54c", "d0950f4d5c", "d18614f97f", "d235d9de4b", "d35aa8f57e", "d3c07a8be3", "d4c39b2e7f", "d4ea78bb6b", "d54420f52f", "d5451b424c", "d5c5acd479", "d6090d8898", "d965c16d63", "d9aaee555f", "db91ee9eb7", "dc38675e8b", "de87d4449c", "df73b6f353", "e04bce0041", "e1406e1314", "e3b1d6694f", "e565f05102", "e75c2d312e", "e78fb8b3cd", "e7bc670d05", "e7c5e4ca5a", "eb4da5f6b1", "ecf3f9f47b", "ed10ef09a1", "edb53c1435", "eea1aebe2c", "efe261cf11", "f0ab55426b", "f1b51b57ee", "f1cbdf3cf5", "f244f21a5d", "f30c9bec65", "f5a78e5b90", "f62472cb38", "f804471b61", "fb752901ba", "fda07cefbd", "fe5ee1aa01", "fe92363e6d", "ff173cf0d3", "ff33273545", "ffc71eef0c"];
+const FREEDOM_FILES  = ["2009__For_Freedom-_Yours_and_Ours___Za_Wolno\u015b\u0107_-_Wasz\u0105_i_Nasz\u0105_465d9d65a1.jpg"];
+
+const BATCH = 24;
+function renderSection(gridId, prefix, hashes, altText, extraFiles) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  const all = hashes ? hashes.map(h => prefix + h + '.jpg') : [];
+  if (extraFiles) extraFiles.forEach(f => all.push(f));
+  all.forEach((fname, i) => {
+    const div = document.createElement('div');
+    div.className = i < BATCH ? 'photo-item' : 'photo-item gallery-hidden';
+    div.dataset.src = 'images/' + fname;
+    div.dataset.alt = altText;
+    const esc = fname.replace(/&/g, '&amp;');
+    div.innerHTML = '<img src="images/' + esc + '" loading="lazy" alt="' + altText + '" />'
+                  + '<div class="photo-item-overlay">View</div>';
+    grid.appendChild(div);
+  });
+}
+
+function loadMore(gridId, wrapId) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  let count = 0;
+  grid.querySelectorAll('.gallery-hidden').forEach(el => {
+    if (count < BATCH) { el.classList.remove('gallery-hidden'); count++; }
+  });
+  if (!grid.querySelector('.gallery-hidden')) {
+    const w = document.getElementById(wrapId);
+    if (w) w.style.display = 'none';
+  }
+}
+
+(function() {
+  const ov = document.createElement('div');
+  ov.id = 'lb';
+  ov.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:1rem;';
+  ov.innerHTML = '<button id="lb-prev" aria-label="Previous" style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.5rem;cursor:pointer;line-height:1;">&#8249;</button>'
+    + '<img id="lb-img" alt="" style="max-width:calc(100vw - 140px);max-height:90vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);" />'
+    + '<button id="lb-next" aria-label="Next" style="position:absolute;right:1rem;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;width:44px;height:44px;border-radius:50%;font-size:1.5rem;cursor:pointer;line-height:1;">&#8250;</button>'
+    + '<button id="lb-close" aria-label="Close" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.25rem;cursor:pointer;line-height:1;">&#x2715;</button>'
+    + '<div id="lb-cnt" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);font-size:.875rem;"></div>';
+  document.body.appendChild(ov);
+
+  const lbImg = ov.querySelector('#lb-img');
+  const lbCnt = ov.querySelector('#lb-cnt');
+  let all = [], cur = 0;
+
+  function visible() { return Array.from(document.querySelectorAll('.photo-item:not(.gallery-hidden)[data-src]')); }
+  function show(i) {
+    all = visible();
+    cur = Math.max(0, Math.min(i, all.length - 1));
+    lbImg.src = all[cur].dataset.src;
+    lbImg.alt = all[cur].dataset.alt || '';
+    lbCnt.textContent = (cur + 1) + ' / ' + all.length;
+    ov.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function close() { ov.style.display = 'none'; document.body.style.overflow = ''; lbImg.src = ''; }
+
+  document.addEventListener('click', e => {
+    const item = e.target.closest('.photo-item[data-src]');
+    if (!item) return;
+    all = visible();
+    show(all.indexOf(item));
+  });
+  ov.querySelector('#lb-prev').addEventListener('click',  e => { e.stopPropagation(); show(cur - 1); });
+  ov.querySelector('#lb-next').addEventListener('click',  e => { e.stopPropagation(); show(cur + 1); });
+  ov.querySelector('#lb-close').addEventListener('click', close);
+  ov.addEventListener('click', e => { if (e.target === ov) close(); });
+  document.addEventListener('keydown', e => {
+    if (ov.style.display !== 'flex') return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+})();
+
+renderSection('grid-2009-main',    MORE09_PREFIX,  MORE09_HASHES,  '2009 Pulaski Day Parade — New York City', null);
+renderSection('grid-2009-freedom', '',             null,           'For Freedom — Yours and Ours (Za Wolność Waszą i Naszą)', FREEDOM_FILES);
+
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>

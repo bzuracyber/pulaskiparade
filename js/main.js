@@ -11,7 +11,6 @@
     this.classList.toggle('open');
     mobileNav.classList.toggle('open');
   });
-  // Close on link click
   mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       hamburger.classList.remove('open');
@@ -24,31 +23,24 @@
 (function () {
   const el = document.getElementById('countdown');
   if (!el) return;
-
-  const target = new Date('2026-10-04T12:30:00'); // Parade start
-
+  const target = new Date('2026-10-04T12:30:00');
   function update() {
-    const now = new Date();
+    const now  = new Date();
     const diff = target - now;
-
     if (diff <= 0) {
       el.innerHTML = '<span class="countdown-num" style="font-size:1.25rem;">Parade Day!</span>';
       return;
     }
-
     const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
     const pad = n => String(n).padStart(2, '0');
-
     document.getElementById('cd-days')    && (document.getElementById('cd-days').textContent    = pad(days));
     document.getElementById('cd-hours')   && (document.getElementById('cd-hours').textContent   = pad(hours));
     document.getElementById('cd-minutes') && (document.getElementById('cd-minutes').textContent = pad(minutes));
     document.getElementById('cd-seconds') && (document.getElementById('cd-seconds').textContent = pad(seconds));
   }
-
   update();
   setInterval(update, 1000);
 })();
@@ -57,11 +49,9 @@
 (function () {
   const btn = document.getElementById('scrollTop');
   if (!btn) return;
-
   window.addEventListener('scroll', () => {
     btn.classList.toggle('visible', window.scrollY > 400);
   });
-
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -72,7 +62,6 @@
   document.querySelectorAll('[data-tabs]').forEach(container => {
     const buttons = container.querySelectorAll('.tab-btn');
     const panels  = container.querySelectorAll('.tab-panel');
-
     buttons.forEach((btn, i) => {
       btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active'));
@@ -88,10 +77,8 @@
 (function () {
   document.querySelectorAll('.accordion-trigger').forEach(trigger => {
     trigger.addEventListener('click', function () {
-      const body = this.nextElementSibling;
+      const body   = this.nextElementSibling;
       const isOpen = this.classList.contains('open');
-
-      // Optionally close siblings
       const parent = this.closest('[data-accordion]');
       if (parent) {
         parent.querySelectorAll('.accordion-trigger.open').forEach(t => {
@@ -101,7 +88,6 @@
           }
         });
       }
-
       this.classList.toggle('open', !isOpen);
       body.classList.toggle('open', !isOpen);
     });
@@ -122,14 +108,12 @@
 /* --- Smooth Appear on Scroll ------------------------------- */
 (function () {
   if (!('IntersectionObserver' in window)) return;
-
   const style = document.createElement('style');
   style.textContent = `
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
     .reveal.visible { opacity: 1; transform: none; }
   `;
   document.head.appendChild(style);
-
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -138,55 +122,94 @@
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
   document.querySelectorAll('.card, .event-row, .form-card, .stat, .timeline-item, .contingent-card, .honor-row, .contact-card').forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
   });
 })();
 
-/* --- Gallery Lightbox (simple) ----------------------------- */
+/* --- Lazy Image Loading (IntersectionObserver, 200px margin) */
 (function () {
-  const items = document.querySelectorAll('.gallery-item[data-src]');
-  if (!items.length) return;
+  if (!('IntersectionObserver' in window)) return;
+  // Handles <img data-src="..."> — browser native loading="lazy" handles the rest
+  const lazyImgs = document.querySelectorAll('img[data-src]');
+  if (!lazyImgs.length) return;
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.removeAttribute('data-src');
+      obs.unobserve(img);
+    });
+  }, { rootMargin: '200px' });
+  lazyImgs.forEach(img => io.observe(img));
+})();
 
-  // Create overlay
+/* --- Gallery Lightbox (event delegation — works after Load More) */
+(function () {
+  if (!document.querySelector('.gallery-item[data-src]')) return;
+
   const overlay = document.createElement('div');
   overlay.id = 'lightbox';
-  overlay.style.cssText = `
-    display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;
-    align-items:center;justify-content:center;padding:1rem;cursor:pointer;
-  `;
+  overlay.style.cssText = [
+    'display:none',
+    'position:fixed',
+    'inset:0',
+    'background:rgba(0,0,0,.92)',
+    'z-index:9999',
+    'align-items:center',
+    'justify-content:center',
+    'padding:1rem',
+  ].join(';');
   overlay.innerHTML = `
-    <img id="lightbox-img" style="max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);" />
-    <button id="lightbox-close" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.15);
-      border:1px solid rgba(255,255,255,.3);color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.25rem;cursor:pointer;">✕</button>
+    <img id="lightbox-img" alt=""
+      style="max-width:90vw;max-height:90vh;border-radius:8px;
+        box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:default;" />
+    <button id="lightbox-close" aria-label="Close lightbox"
+      style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.15);
+        border:1px solid rgba(255,255,255,.3);color:#fff;width:40px;height:40px;
+        border-radius:50%;font-size:1.25rem;cursor:pointer;line-height:1;">&#x2715;</button>
   `;
   document.body.appendChild(overlay);
 
   const img = overlay.querySelector('#lightbox-img');
 
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      img.src = item.dataset.src;
-      overlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    });
+  document.addEventListener('click', e => {
+    const item = e.target.closest('.gallery-item[data-src]');
+    if (!item) return;
+    img.src  = item.dataset.src;
+    img.alt  = item.dataset.alt || '';
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   });
 
+  function closeLightbox() {
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+    img.src = '';
+  }
+
   overlay.addEventListener('click', e => {
-    if (e.target === overlay || e.target.id === 'lightbox-close') {
-      overlay.style.display = 'none';
-      document.body.style.overflow = '';
-      img.src = '';
-    }
+    if (e.target === overlay || e.target.id === 'lightbox-close') closeLightbox();
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && overlay.style.display === 'flex') {
-      overlay.style.display = 'none';
-      document.body.style.overflow = '';
-      img.src = '';
-    }
+    if (e.key === 'Escape' && overlay.style.display === 'flex') closeLightbox();
   });
 })();
+
+/* --- Load More Photos (gallery tabs) ----------------------- */
+function loadMorePhotos(gridId, btnId) {
+  const grid = document.getElementById(gridId);
+  if (!grid) return;
+  const hidden = grid.querySelectorAll('.gallery-hidden');
+  let count = 0;
+  hidden.forEach(el => {
+    if (count < 24) { el.classList.remove('gallery-hidden'); count++; }
+  });
+  if (grid.querySelectorAll('.gallery-hidden').length === 0) {
+    const btn = document.getElementById(btnId);
+    if (btn) btn.parentElement.style.display = 'none';
+  }
+}
