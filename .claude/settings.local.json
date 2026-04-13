@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed 's/_[a-f0-9]*\\\\.jpg$//')",
+      "Bash(sed 's/_[a-f0-9]*\\\\.png$//')",
+      "Bash(node generate-galleries.js)"
+    ]
+  }
+}

@@ -403,6 +403,17 @@ p { max-width: 70ch; }
     radial-gradient(ellipse 80% 60% at 70% 50%, rgba(220,20,60,.28) 0%, transparent 65%),
     radial-gradient(ellipse 50% 80% at 10% 80%, rgba(201,168,76,.12) 0%, transparent 60%);
   pointer-events: none;
+  z-index: 0;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero-flag-stripe {
@@ -412,6 +423,7 @@ p { max-width: 70ch; }
   right: 0;
   height: 4px;
   background: #FFFFFF;
+  z-index: 2;
 }
 
 .hero-inner {
