@@ -203,10 +203,15 @@ p { max-width: 70ch; }
 
 /* --- Top Bar ----------------------------------------------- */
 .top-bar {
-  background: var(--navy);
-  color: rgba(255,255,255,.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  background: transparent;
+  color: rgba(255,255,255,0.9);
   font-size: .8125rem;
-  padding: .4rem 0;
+  padding: .5rem 0;
 }
 .top-bar .container {
   display: flex;
@@ -221,7 +226,7 @@ p { max-width: 70ch; }
 /* --- Navigation -------------------------------------------- */
 .navbar {
   position: absolute;
-  top: 0;
+  top: 2rem;
   left: 0;
   right: 0;
   z-index: 1000;
@@ -408,12 +413,12 @@ p { max-width: 70ch; }
 .hero {
   background: linear-gradient(135deg, rgba(200,16,46,.88) 0%, rgba(160,10,35,.75) 100%);
   color: var(--white);
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-block: clamp(8rem, 18vw, 13rem);
   position: relative;
   overflow: hidden;
   margin: 0;
   margin-bottom: 0;
+  padding-bottom: 0;
   line-height: 1;
   display: block;
 }
@@ -452,8 +457,7 @@ p { max-width: 70ch; }
   grid-template-columns: 1fr 400px;
   gap: 4rem;
   align-items: center;
-  padding-top: clamp(5rem, 12vw, 8rem);
-  padding-bottom: clamp(4rem, 12vw, 8rem);
+  padding-top: 5rem;
 }
 
 .hero-eyebrow {
