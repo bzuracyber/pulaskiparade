@@ -407,11 +407,12 @@ p { max-width: 70ch; }
 .hero {
   background: linear-gradient(135deg, rgba(200,16,46,.88) 0%, rgba(160,10,35,.75) 100%);
   color: var(--white);
-  padding-block: clamp(4rem, 12vw, 8rem);
+  padding-top: clamp(4rem, 12vw, 8rem);
+  padding-bottom: 0;
   position: relative;
   overflow: hidden;
+  margin: 0;
   margin-bottom: 0;
-  padding-bottom: clamp(4rem, 12vw, 8rem);
   line-height: 1;
   display: block;
 }
