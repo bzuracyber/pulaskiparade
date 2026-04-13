@@ -624,6 +624,18 @@
 
 <button id="scrollTop" aria-label="Back to top">↑</button>
 
+<script>
+// Add scrolled class to navbar when user scrolls past 80px
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+</script>
+
 <script src="js/main.js"></script>
 </body>
 </html>

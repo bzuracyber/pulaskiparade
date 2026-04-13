@@ -223,8 +223,14 @@ p { max-width: 70ch; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--navy);
+  background: rgba(0, 0, 0, 0.25);
   border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: none;
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.navbar.scrolled {
+  background: rgba(180, 10, 30, 0.95);
   box-shadow: 0 2px 12px rgba(0,0,0,.18);
 }
 
@@ -244,27 +250,33 @@ p { max-width: 70ch; }
 }
 
 .navbar-logo {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   background: var(--red);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   flex-shrink: 0;
+}
+
+.navbar-logo img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
 }
 
 .navbar-brand-text { line-height: 1.15; }
 .navbar-brand-text strong {
   display: block;
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: var(--white);
   font-weight: 700;
 }
 .navbar-brand-text span {
-  font-size: .75rem;
+  font-size: 0.8rem;
   color: rgba(255,255,255,.6);
   font-weight: 400;
 }
@@ -367,7 +379,12 @@ p { max-width: 70ch; }
   flex-direction: column;
   padding: 1rem 0 1.5rem;
   border-top: 1px solid rgba(255,255,255,.1);
-  background: var(--navy);
+  background: rgba(0, 0, 0, 0.35);
+  transition: background-color var(--transition);
+}
+
+.navbar.scrolled .mobile-nav {
+  background: rgba(180, 10, 30, 0.95);
 }
 .mobile-nav.open { display: flex; }
 .mobile-nav a {
@@ -393,6 +410,10 @@ p { max-width: 70ch; }
   padding-block: clamp(4rem, 12vw, 8rem);
   position: relative;
   overflow: hidden;
+  margin-bottom: 0;
+  padding-bottom: clamp(4rem, 12vw, 8rem);
+  line-height: 1;
+  display: block;
 }
 
 .hero::before {
@@ -400,6 +421,7 @@ p { max-width: 70ch; }
   position: absolute;
   inset: 0;
   background:
+    linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 70%, transparent 100%),
     radial-gradient(ellipse 80% 60% at 70% 50%, rgba(220,20,60,.28) 0%, transparent 65%),
     radial-gradient(ellipse 50% 80% at 10% 80%, rgba(201,168,76,.12) 0%, transparent 60%);
   pointer-events: none;
@@ -414,6 +436,11 @@ p { max-width: 70ch; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .hero-flag-stripe {
@@ -449,17 +476,27 @@ p { max-width: 70ch; }
   padding: .375rem .875rem;
   border-radius: 999px;
   margin-bottom: 1.25rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 
-.hero h1 { color: var(--white); margin-bottom: 1.25rem; }
-.hero h1 em { color: var(--gold-light); font-style: normal; }
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+.hero h1 em {
+  color: var(--gold-light);
+  font-style: normal;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
 .hero-theme {
   font-size: clamp(.9rem, 2vw, 1.0625rem);
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.9);
   font-style: italic;
   margin-bottom: 1.5rem;
   max-width: 55ch;
   line-height: 1.5;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 .hero-meta {
   display: flex;
@@ -474,8 +511,12 @@ p { max-width: 70ch; }
   gap: .5rem;
   font-size: .9375rem;
   color: rgba(255,255,255,.85);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
-.hero-meta-item svg { color: var(--gold-light); }
+.hero-meta-item svg {
+  color: var(--gold-light);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
 
 /* Countdown card */
