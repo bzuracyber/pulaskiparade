@@ -1,6 +1,6 @@
 /* ============================================================
    pulaskiparade.org — Main Stylesheet
-   Polish Red: #C8102E  |  Navy: #1B2A5C  |  Gold: #C9A84C
+   Polish Red: #C8102E  |  Deep Red: #8B0000  |  Gold: #C9A84C
    ============================================================ */
 
 /* --- Reset & Base ------------------------------------------ */
@@ -9,12 +9,12 @@
 :root {
   --red:     #DC143C;
   --red-dark:#B01030;
-  --navy:    #1A3A52;
-  --navy-light: #234D6B;
+  --navy:    #C8102E;
+  --navy-light: #A50D26;
   --gold:    #C9A84C;
   --gold-light: #E8C97A;
   --white:   #FFFFFF;
-  --off-white:#F8F7F4;
+  --off-white:#FFF5F5;
   --gray-100:#F3F4F6;
   --gray-200:#E5E7EB;
   --gray-400:#9CA3AF;
@@ -388,7 +388,7 @@ p { max-width: 70ch; }
 
 /* --- Hero -------------------------------------------------- */
 .hero {
-  background: linear-gradient(135deg, var(--navy) 0%, #2C3E7A 60%, #3A2A6B 100%);
+  background: linear-gradient(135deg, rgba(200,16,46,.88) 0%, rgba(160,10,35,.75) 100%);
   color: var(--white);
   padding-block: clamp(4rem, 12vw, 8rem);
   position: relative;
@@ -411,7 +411,7 @@ p { max-width: 70ch; }
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(to right, var(--red) 50%, var(--white) 50%);
+  background: #FFFFFF;
 }
 
 .hero-inner {
@@ -468,8 +468,8 @@ p { max-width: 70ch; }
 
 /* Countdown card */
 .countdown-card {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(200,16,46,.15);
+  border: 1px solid rgba(200,16,46,.3);
   border-radius: var(--radius-lg);
   padding: 2rem;
   backdrop-filter: blur(8px);
@@ -658,7 +658,7 @@ p { max-width: 70ch; }
   flex-shrink: 0;
 }
 .card-icon-red  { background: rgba(220,20,60,.1);  color: var(--red); }
-.card-icon-navy { background: rgba(26,58,82,.1);   color: var(--navy); }
+.card-icon-navy { background: rgba(200,16,46,.1);  color: var(--navy); }
 .card-icon-gold { background: rgba(201,168,76,.12); color: var(--gold); }
 .card-icon-white { background: rgba(255,255,255,.12); color: var(--white); }
 
@@ -714,7 +714,7 @@ p { max-width: 70ch; }
 .event-row:hover { box-shadow: var(--shadow); border-color: var(--gray-400); }
 .event-date-block {
   text-align: center;
-  background: var(--navy);
+  background: var(--red);
   color: var(--white);
   border-radius: var(--radius);
   padding: .625rem .5rem;
@@ -747,7 +747,7 @@ p { max-width: 70ch; }
   font-size: .9rem;
 }
 .data-table th {
-  background: var(--navy);
+  background: var(--red);
   color: var(--white);
   padding: .875rem 1rem;
   text-align: left;
@@ -820,7 +820,7 @@ p { max-width: 70ch; }
 .gallery-item-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(26,58,82,.65);
+  background: rgba(200,16,46,.65);
   opacity: 0;
   transition: opacity var(--transition);
   display: flex;
@@ -920,7 +920,7 @@ p { max-width: 70ch; }
 
 /* --- Footer ----------------------------------------------- */
 footer {
-  background: var(--navy);
+  background: #8B0000;
   color: rgba(255,255,255,.7);
   padding-block: 4rem 2rem;
 }
