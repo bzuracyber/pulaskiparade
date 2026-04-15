@@ -1302,3 +1302,80 @@ footer {
   .navbar, .top-bar, footer, #scrollTop, .hero-actions { display: none; }
   .hero { background: var(--navy)!important; -webkit-print-color-adjust: exact; }
 }
+
+/* --- Animation System -------------------------------------- */
+
+/* Hero entry keyframes */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Staggered hero element entries */
+.hero-eyebrow {
+  opacity: 0;
+  animation: heroFadeUp .7s ease forwards;
+  animation-delay: .15s;
+}
+.hero h1 {
+  opacity: 0;
+  animation: heroFadeUp .7s ease forwards;
+  animation-delay: .35s;
+}
+.hero-theme {
+  opacity: 0;
+  animation: heroFadeUp .7s ease forwards;
+  animation-delay: .45s;
+}
+.hero-meta {
+  opacity: 0;
+  animation: heroFadeUp .7s ease forwards;
+  animation-delay: .55s;
+}
+.hero-actions {
+  opacity: 0;
+  animation: heroFadeUp .7s ease forwards;
+  animation-delay: .70s;
+}
+
+/* Page-hero entries */
+.page-hero h1 {
+  opacity: 0;
+  animation: heroFadeUp .7s ease forwards;
+  animation-delay: .1s;
+}
+.page-hero p {
+  opacity: 0;
+  animation: heroFadeUp .7s ease forwards;
+  animation-delay: .3s;
+}
+
+/* Scroll-reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delay helpers */
+.d1 { transition-delay: .05s; }
+.d2 { transition-delay: .12s; }
+.d3 { transition-delay: .19s; }
+.d4 { transition-delay: .26s; }
+.d5 { transition-delay: .33s; }
+.d6 { transition-delay: .40s; }
+
+/* Hero parallax placeholder */
+.hero-bg { will-change: transform; }
+
+/* Stats count-up */
+.stat-num { font-variant-numeric: tabular-nums; }

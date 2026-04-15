@@ -105,15 +105,32 @@
   });
 })();
 
-/* --- Smooth Appear on Scroll ------------------------------- */
+/* --- Scroll-Reveal with Stagger ---------------------------- */
 (function () {
   if (!('IntersectionObserver' in window)) return;
-  const style = document.createElement('style');
-  style.textContent = `
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-  `;
-  document.head.appendChild(style);
+
+  const REVEAL_SELECTORS = [
+    '.section-heading', '.section-subheading', '.gold-rule',
+    '.card', '.event-row', '.stat', '.timeline-item',
+    '.contingent-card', '.honor-row', '.contact-card',
+    '.form-card', '.sponsor-tier', '.sponsor-card',
+    '.membership-card', '.program-card',
+  ].join(',');
+
+  const STAGGER_PARENTS = [
+    '.grid-3', '.grid-2', '.events-list',
+    '.stats-strip .stats-grid', '.contingents-grid', '.sponsor-grid',
+  ].join(',');
+
+  /* Assign d1–d6 delay classes to .reveal children of stagger parents */
+  document.querySelectorAll(STAGGER_PARENTS).forEach(parent => {
+    const children = Array.from(parent.querySelectorAll('.reveal'));
+    children.forEach((child, i) => {
+      const cls = 'd' + Math.min(i + 1, 6);
+      child.classList.add(cls);
+    });
+  });
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -121,9 +138,64 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.card, .event-row, .form-card, .stat, .timeline-item, .contingent-card, .honor-row, .contact-card').forEach(el => {
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll(REVEAL_SELECTORS).forEach(el => {
+    /* Skip elements already animated by CSS keyframes in hero sections */
+    if (el.closest('.hero, .page-hero')) return;
     el.classList.add('reveal');
+    observer.observe(el);
+  });
+})();
+
+/* --- Hero Parallax ----------------------------------------- */
+(function () {
+  const bgs = document.querySelectorAll('.hero-bg');
+  if (!bgs.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      bgs.forEach(bg => {
+        bg.style.transform = 'translateY(' + (y * 0.38) + 'px)';
+      });
+      ticking = false;
+    });
+    ticking = true;
+  }, { passive: true });
+})();
+
+/* --- Stats Count-Up ---------------------------------------- */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+
+  function easeOutQuad(t) { return t * (2 - t); }
+
+  function animateCount(el, target, duration) {
+    const start = performance.now();
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      el.textContent = Math.round(easeOutQuad(progress) * target);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      if (!isNaN(target)) animateCount(el, target, 1400);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
     observer.observe(el);
   });
 })();
