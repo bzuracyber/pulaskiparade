@@ -411,54 +411,64 @@ p { max-width: 70ch; }
 
 /* --- Hero -------------------------------------------------- */
 .hero {
-  background: linear-gradient(135deg, rgba(200,16,46,.88) 0%, rgba(160,10,35,.75) 100%);
-  color: var(--white);
-  min-height: 100vh;
-  padding-block: 0;
   position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  background: #0a0510;
+  color: var(--white);
   margin: 0;
-  margin-bottom: 0;
   line-height: 1;
-  display: block;
 }
 
+/* Video fills the section absolutely — no layout contribution */
+.hero video,
+.hero-video,
+video.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Overlay sits above video, below content */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(10, 5, 20, 0.82) 0%,
-    rgba(180, 10, 30, 0.55) 55%,
-    rgba(0, 0, 0, 0.70) 100%
+    rgba(10, 5, 20, 0.80) 0%,
+    rgba(160, 10, 30, 0.50) 55%,
+    rgba(0, 0, 0, 0.72) 100%
   );
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  display: block;
-  margin: 0;
-  padding: 0;
+/* Content sits above overlay */
+.hero .container,
+.hero .hero-inner {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-inner {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 4rem;
   align-items: center;
-  min-height: 100vh;
-  padding-block: clamp(6rem, 10vw, 9rem);
+  min-height: unset;
+  height: 100%;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .hero-eyebrow {
