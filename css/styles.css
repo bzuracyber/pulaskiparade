@@ -1488,6 +1488,9 @@ video.hero-bg {
   .hero-meta { flex-direction: column; gap: .625rem; }
 }
 
+/* --- Mobile nav body scroll lock --------------------------- */
+body.nav-open { overflow: hidden; }
+
 /* --- Focus States (accessibility) -------------------------- */
 :focus-visible {
   outline: 2px solid var(--gold-light);
@@ -1513,6 +1516,18 @@ video.hero-bg {
 .timeline-item:focus-within {
   border-color: var(--gold);
   box-shadow: var(--shadow-md);
+}
+.lp-gallery-item[role="button"] {
+  cursor: pointer;
+}
+.lp-gallery-item:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+.lightbox-close:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
 }
 
 /* Respect reduced motion */

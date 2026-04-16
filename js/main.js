@@ -8,13 +8,17 @@
   const mobileNav = document.getElementById('mobileNav');
   if (!hamburger || !mobileNav) return;
   hamburger.addEventListener('click', function () {
-    this.classList.toggle('open');
-    mobileNav.classList.toggle('open');
+    const isOpen = mobileNav.classList.toggle('open');
+    this.classList.toggle('open', isOpen);
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.classList.toggle('nav-open', isOpen);
   });
   mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
       mobileNav.classList.remove('open');
+      document.body.classList.remove('nav-open');
     });
   });
 })();
