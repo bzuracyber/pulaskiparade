@@ -146,40 +146,7 @@ html { scroll-behavior: smooth; }
 
 /* TIMELINE — styles live in styles.css (.timeline, .timeline-item, .timeline-year) */
 
-/* EVENT ROWS */
-.event-card { display:grid; grid-template-columns:72px 1fr; gap:1.25rem; align-items:start; background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:1.25rem; }
-.event-date-box { background:var(--red); color:#fff; border-radius:var(--radius); text-align:center; padding:.5rem .25rem; }
-.event-date-box .ev-month { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
-.event-date-box .ev-day { font-size:1.75rem; font-weight:800; line-height:1; font-family:'Playfair Display',serif; }
-.event-date-box .ev-year { font-size:.65rem; opacity:.75; }
-.event-label { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--red); border:1px solid var(--red); border-radius:999px; padding:.15rem .6rem; margin-bottom:.4rem; }
-.event-title { font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:.25rem; line-height:1.3; }
-.event-where { font-size:.875rem; color:var(--gray-600); }
-
-/* GALLERY GRID */
-.lp-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:.75rem; }
-.lp-gallery-item { aspect-ratio:4/3; overflow:hidden; border-radius:var(--radius); cursor:pointer; }
-.lp-gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform .45s ease, filter .45s ease; filter:brightness(.88); }
-.lp-gallery-item:hover img { transform:scale(1.06); filter:brightness(1); }
-
-/* GET INVOLVED CARDS */
-.involve-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; }
-.involve-card { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-lg,10px); padding:2rem 1.5rem; transition:all .25s ease; }
-.involve-card:hover { background:rgba(255,255,255,.13); border-color:rgba(201,168,76,.4); transform:translateY(-3px); }
-.involve-icon { width:48px; height:48px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
-.involve-icon svg { width:22px; height:22px; stroke:var(--navy); }
-.involve-card h3 { color:#fff; font-size:1.05rem; margin-bottom:.5rem; }
-.involve-card p { color:rgba(255,255,255,.65); font-size:.875rem; margin-bottom:1.25rem; }
-
-/* SPONSOR BADGE */
-.sponsor-badge { background:rgba(255,255,255,.06); border:1px solid rgba(201,168,76,.25); border-radius:var(--radius); padding:1.25rem 2rem; text-align:center; color:rgba(255,255,255,.8); font-size:.9375rem; }
-.sponsor-badge strong { color:var(--gold-light); display:block; font-size:1.1rem; margin-bottom:.25rem; }
-
-/* CONTACT */
-.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
-.contact-item { display:flex; align-items:center; gap:1rem; background:var(--off-white); border-radius:var(--radius); padding:1.25rem; }
-.contact-item svg { color:var(--red); flex-shrink:0; }
-.contact-item a { color:var(--navy); font-weight:500; }
+/* EVENT, GALLERY, INVOLVE, CONTACT — styles live in styles.css */
 
 /* FOOTER */
 .lp-footer { background:var(--navy-dark,#0d1526); color:rgba(255,255,255,.6); padding:3rem 0 2rem; font-size:.875rem; }
@@ -194,50 +161,9 @@ html { scroll-behavior: smooth; }
 .lightbox img { max-height:90vh; max-width:90vw; border-radius:4px; }
 .lightbox-close { position:absolute; top:1.25rem; right:1.5rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; line-height:1; }
 
-/* RESPONSIVE */
+/* RESPONSIVE — hero-inner stacks on mobile */
 @media (max-width:768px) {
   .hero-inner { grid-template-columns:1fr; }
-  .contact-grid { grid-template-columns:1fr; }
-  .involve-grid { grid-template-columns:1fr 1fr; }
-}
-@media (max-width:500px) {
-  .involve-grid { grid-template-columns:1fr; }
-}
-
-/* ── Get Involved mobile ── */
-@media (max-width: 767px) {
-  /* Cards grid — override inline display:grid with !important */
-  #involve .container > div:nth-child(2),
-  #involve .cards,
-  #involve .grid,
-  .involve-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 1rem !important;
-    padding: 0 1rem;
-  }
-
-  /* Individual cards */
-  #involve .container > div:nth-child(2) > div,
-  #involve .card,
-  .involve-card {
-    width: 100%;
-    padding: 1.25rem;
-    box-sizing: border-box;
-  }
-
-  /* Buttons inside cards — override inline display:inline-block */
-  #involve .container > div:nth-child(2) > div > a,
-  #involve .card a,
-  #involve .card .btn,
-  .involve-card a {
-    display: block !important;
-    width: 100%;
-    text-align: center;
-    padding: 0.65rem;
-    margin-top: 0.75rem;
-    box-sizing: border-box;
-  }
 }
 
 /* ── Gallery mobile ── */
@@ -668,37 +594,37 @@ html { scroll-behavior: smooth; }
 <section class="lp-section lp-section-alt" id="parade">
   <div class="container">
 
-    <!-- Section Header -->
-    <div class="section-header text-center" style="margin-bottom:3rem;">
-      <span class="eyebrow">2026 Grand Marshal</span>
-      <h2 class="section-title">Dr. Iwona Korga</h2>
-      <div class="gold-rule center"></div>
-    </div>
-
     <!-- Marshal Card -->
     <div class="marshal-card">
+
+      <!-- Photo -->
       <div class="marshal-photo">
-        <img src="images/GrandMarshalKorga2026.jpg" alt="Dr. Iwona Korga, 2026 Grand Marshal" style="width:100%;height:100%;object-fit:cover;">
+        <img src="images/GrandMarshalKorga2026.jpg" alt="Dr. Iwona Korga, 2026 Grand Marshal of the Pulaski Day Parade">
+        <div class="marshal-photo-frame" aria-hidden="true"></div>
       </div>
+
+      <!-- Details -->
       <div class="marshal-content">
-        <span class="marshal-year-badge">89th Annual Parade · 2026</span>
-        <h3 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,1.9rem);color:var(--navy);margin-bottom:.5rem;">Dr. Iwona Korga</h3>
-        <p class="marshal-title">
-          President and Executive Director, Joseph Piłsudski Institute of America;<br>
+        <span class="marshal-year-badge">2026 Grand Marshal · 89th Annual Parade</span>
+        <div class="marshal-accent" aria-hidden="true"></div>
+        <h2>Dr. Iwona Korga</h2>
+        <p class="marshal-name-sub">
+          President &amp; Executive Director, Joseph Piłsudski Institute of America<br>
           Treasurer, PSFCU Board of Directors
         </p>
-        <p style="font-size:.9375rem;color:var(--gray-600);margin-bottom:1.25rem;max-width:55ch;line-height:1.7;">
+        <p class="marshal-desc">
           Dr. Korga is a distinguished leader in the Polish-American community, serving in prominent roles at two of Polonia's most important institutions. She was honored at Polish Heritage Night at Gracie Mansion alongside Zygmunt Bielski, Parade Director, by the NYC Mayor.
         </p>
-        <p style="font-size:.9375rem;color:var(--gray-600);margin-bottom:2rem;max-width:55ch;line-height:1.7;">
+        <p class="marshal-desc">
           Her decades of service to the Piłsudski Institute have preserved irreplaceable archives and historical materials for future generations of Polish-Americans, and her financial leadership at the Polish and Slavic Federal Credit Union continues to strengthen our community's economic foundation.
         </p>
         <div class="marshal-bios">
           <a href="documents/IwonaKorgabioinEnglish.pdf" class="btn btn-outline btn-sm">Biography (English)</a>
           <a href="documents/IwonaKorgabioinPolish.pdf" class="btn btn-outline btn-sm">Biografia (Polish)</a>
-          <a href="documents/2026_ParadeFormTentativeasof20260317.docx" class="btn btn-primary">Full Parade Details →</a>
+          <a href="documents/2026_ParadeFormTentativeasof20260317.docx" class="btn btn-primary btn-sm">Full Parade Details →</a>
         </div>
       </div>
+
     </div>
 
   </div>
@@ -718,60 +644,59 @@ html { scroll-behavior: smooth; }
       <div class="gold-rule center"></div>
     </div>
 
-    <!-- 2×2 event grid -->
-    <div class="grid-2" style="gap:1.25rem;">
+    <div class="events-grid">
 
-      <!-- Event 1 -->
+      <!-- Event 1 — Committee Meeting -->
       <div class="event-card">
-        <div class="event-date-box">
+        <div class="event-date-badge">
           <div class="ev-month">Apr</div>
-          <div class="ev-day">16</div>
+          <span class="ev-day">16</span>
           <div class="ev-year">2026</div>
         </div>
-        <div>
-          <span class="event-label">Meeting</span>
+        <div class="event-body">
+          <span class="event-tag">Meeting</span>
           <div class="event-title">GPMPC Committee Meeting</div>
           <div class="event-where">Holy Cross Parish, School Hall · 56-01 61st Street, Maspeth, NY 11378 · 7:30 PM</div>
         </div>
       </div>
 
-      <!-- Event 2 -->
+      <!-- Event 2 — Sashing -->
       <div class="event-card">
-        <div class="event-date-box">
+        <div class="event-date-badge">
           <div class="ev-month">Apr</div>
-          <div class="ev-day">18</div>
+          <span class="ev-day">18</span>
           <div class="ev-year">2026</div>
         </div>
-        <div>
-          <span class="event-label">Sashing</span>
+        <div class="event-body">
+          <span class="event-tag">Sashing</span>
           <div class="event-title">Multiple Marshal Sashing Events</div>
           <div class="event-where">Linden NJ · OLC Brooklyn · Newark NJ · Hewitt NJ · Long Island · Ridgewood NY</div>
         </div>
       </div>
 
-      <!-- Event 3 -->
+      <!-- Event 3 — Gala -->
       <div class="event-card">
-        <div class="event-date-box">
+        <div class="event-date-badge">
           <div class="ev-month">Sep</div>
-          <div class="ev-day">—</div>
+          <span class="ev-day">—</span>
           <div class="ev-year">2026</div>
         </div>
-        <div>
-          <span class="event-label">Gala</span>
+        <div class="event-body">
+          <span class="event-tag">Gala</span>
           <div class="event-title">Grand Marshal Ball</div>
           <div class="event-where">Details TBA — watch this space for venue and ticket information</div>
         </div>
       </div>
 
-      <!-- Event 4 -->
-      <div class="event-card">
-        <div class="event-date-box">
+      <!-- Event 4 — THE BIG DAY (full-width, featured) -->
+      <div class="event-card event-card--featured">
+        <div class="event-date-badge">
           <div class="ev-month">Oct</div>
-          <div class="ev-day">4</div>
+          <span class="ev-day">4</span>
           <div class="ev-year">2026</div>
         </div>
-        <div>
-          <span class="event-label" style="color:var(--red);border-color:var(--red);">THE BIG DAY</span>
+        <div class="event-body">
+          <span class="event-tag">The Big Day</span>
           <div class="event-title">89th Annual Pulaski Day Parade</div>
           <div class="event-where">5th Avenue, New York City — stepping off 12:30pm at 41st Street</div>
         </div>
@@ -793,7 +718,7 @@ html { scroll-behavior: smooth; }
       <span class="eyebrow">Parade Memories</span>
       <h2 class="section-title">Photo Gallery</h2>
       <div class="gold-rule center"></div>
-      <p style="color:var(--gray-600);font-size:.9375rem;margin-top:-.5rem;">Photos by Beata Kruzel and others · 2024–2026</p>
+      <p style="color:var(--gray-600);font-size:.9375rem;margin-top:-.25rem;margin-inline:auto;">Photos by Beata Kruzel and others · 2024–2026</p>
     </div>
 
     <div class="lp-gallery">
@@ -843,93 +768,70 @@ html { scroll-behavior: smooth; }
       </p>
     </div>
 
-    <!-- Cards grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+    <!-- Why-card grid -->
+    <div class="involve-why-grid">
 
       <!-- Parade Participation -->
-      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="involve-card">
+        <div class="involve-card-icon" aria-hidden="true">
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Parade Participation</h3>
-        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">March in the 89th Annual Pulaski Day Parade on 5th Avenue. Download the participation form and join us October 4, 2026.</p>
-        <a href="documents/2026_ParadeFormTentativeasof20260317.docx"
-           style="display:inline-block;padding:.5rem 1.25rem;background:var(--gold);color:var(--navy);font-weight:700;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid var(--gold);">
-          Download Form
-        </a>
+        <div class="involve-card-body">
+          <h3>Parade Participation</h3>
+          <p>March in the 89th Annual Pulaski Day Parade on 5th Avenue. Download the participation form and join us October 4, 2026.</p>
+          <a href="documents/2026_ParadeFormTentativeasof20260317.docx" class="btn-involve btn-involve-primary">Download Form</a>
+        </div>
       </div>
 
       <!-- Become a Sponsor -->
-      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <div class="involve-card">
+        <div class="involve-card-icon" aria-hidden="true">
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Become a Sponsor</h3>
-        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">Multiple sponsorship levels available. Support Polish heritage and culture in New York City.</p>
-        <a href="documents/2026SPONSORSHIPLEVELS.docx"
-           style="display:inline-block;padding:.5rem 1.25rem;background:transparent;color:rgba(255,255,255,.9);font-weight:600;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid rgba(255,255,255,.5);">
-          Sponsorship Levels
-        </a>
+        <div class="involve-card-body">
+          <h3>Become a Sponsor</h3>
+          <p>Multiple sponsorship levels available. Support Polish heritage and culture in New York City.</p>
+          <a href="documents/2026SPONSORSHIPLEVELS.docx" class="btn-involve">Sponsorship Levels</a>
+        </div>
       </div>
 
       <!-- Membership -->
-      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <div class="involve-card">
+        <div class="involve-card-icon" aria-hidden="true">
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
-        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Membership</h3>
-        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">Join the GPMPC. Renewal and new member forms available in Polish and English.</p>
-        <a href="documents/2026GPMPCMembershipRenewalForminPolishandEnglish.pdf"
-           style="display:inline-block;padding:.5rem 1.25rem;background:transparent;color:rgba(255,255,255,.9);font-weight:600;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid rgba(255,255,255,.5);">
-          Join Today
-        </a>
+        <div class="involve-card-body">
+          <h3>Membership</h3>
+          <p>Join the GPMPC. Renewal and new member forms available in Polish and English.</p>
+          <a href="documents/2026GPMPCMembershipRenewalForminPolishandEnglish.pdf" class="btn-involve">Join Today</a>
+        </div>
       </div>
 
       <!-- Journal Advertising -->
-      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
-          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <div class="involve-card">
+        <div class="involve-card-icon" aria-hidden="true">
+          <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Journal Advertising</h3>
-        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">Advertise in the official Pulaski Day Parade Journal.</p>
-        <a href="documents/JournalPage.pdf"
-           style="display:inline-block;padding:.5rem 1.25rem;background:transparent;color:rgba(255,255,255,.9);font-weight:600;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid rgba(255,255,255,.5);">
-          Journal Contract
-        </a>
+        <div class="involve-card-body">
+          <h3>Journal Advertising</h3>
+          <p>Advertise in the official Pulaski Day Parade Journal.</p>
+          <a href="documents/JournalPage.pdf" class="btn-involve">Journal Contract</a>
+        </div>
       </div>
 
-    </div><!-- /grid -->
+    </div><!-- /involve-why-grid -->
 
-    <!-- PSFCU Sponsor Badge — with logo -->
-    <div style="
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(201,168,76,.35);
-      border-radius: 12px;
-      padding: 2rem 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      max-width: 860px;
-      margin: 0 auto;
-    ">
+    <!-- PSFCU Sponsor Banner -->
+    <div class="psfcu-banner">
       <img src="images/polishslavic.jpg"
            alt="Polish &amp; Slavic Federal Credit Union"
-           style="height: 56px; width: auto; border-radius: 6px; object-fit: contain; background:#fff; padding: 6px 10px;">
-      <div style="flex:1; min-width: 200px;">
-        <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.35rem;">
-          Official Sponsor &amp; Partner
-        </div>
-        <div style="color:#fff;font-weight:600;font-size:1rem;margin-bottom:.25rem;">
-          Polish &amp; Slavic Federal Credit Union
-        </div>
-        <div style="color:rgba(255,255,255,.6);font-size:.875rem;">
-          Proudly supporting the Pulaski Day Parade and the Polish-American community.
-        </div>
+           class="psfcu-logo">
+      <div class="psfcu-text">
+        <div class="psfcu-eyebrow">Official Sponsor &amp; Partner</div>
+        <div class="psfcu-name">Polish &amp; Slavic Federal Credit Union</div>
+        <div class="psfcu-sub">Proudly supporting the Pulaski Day Parade and the Polish-American community.</div>
       </div>
-      <a href="https://www.psfcu.com" target="_blank" rel="noopener"
-         style="display:inline-block;padding:.6rem 1.5rem;background:var(--gold);color:var(--navy);font-weight:700;font-size:.875rem;border-radius:6px;text-decoration:none;white-space:nowrap;">
+      <a href="https://www.psfcu.com" target="_blank" rel="noopener" class="btn btn-gold">
         Visit psfcu.com →
       </a>
     </div>
@@ -951,47 +853,69 @@ html { scroll-behavior: smooth; }
       <div class="gold-rule center"></div>
     </div>
 
-    <div class="contact-grid">
+    <!-- 4-col contact blocks -->
+    <div class="contact-section-grid">
 
       <!-- Email -->
-      <div class="contact-item">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-        <div>
-          <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-400);margin-bottom:.25rem;">Email</div>
+      <div class="contact-block">
+        <div class="contact-icon-circle">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        </div>
+        <div class="contact-block-label">Email</div>
+        <div class="contact-block-value">
           <a href="mailto:events@pulaskiparade.org">events@pulaskiparade.org</a>
         </div>
       </div>
 
       <!-- Facebook -->
-      <div class="contact-item">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        <div>
-          <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-400);margin-bottom:.25rem;">Facebook</div>
+      <div class="contact-block">
+        <div class="contact-icon-circle">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </div>
+        <div class="contact-block-label">Facebook</div>
+        <div class="contact-block-value">
           <a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener">PulaskiParadeNY</a>
         </div>
       </div>
 
       <!-- Next Meeting -->
-      <div class="contact-item">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        <div>
-          <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-400);margin-bottom:.25rem;">Next Meeting</div>
-          <span style="color:var(--navy);font-weight:500;">Thursday, April 16, 2026 at 7:30pm</span><br>
-          <span style="font-size:.875rem;color:var(--gray-600);">Holy Cross Parish, Maspeth NY</span>
+      <div class="contact-block">
+        <div class="contact-icon-circle">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="contact-block-label">Next Meeting</div>
+        <div class="contact-block-value">
+          Thursday, April 16, 2026<br>at 7:30pm
+          <div class="contact-sub">Holy Cross Parish, Maspeth NY</div>
         </div>
       </div>
 
       <!-- Parade Location -->
-      <div class="contact-item">
-        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div>
-          <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray-400);margin-bottom:.25rem;">Parade Location</div>
-          <span style="color:var(--navy);font-weight:500;">5th Avenue &amp; 41st Street</span><br>
-          <span style="font-size:.875rem;color:var(--gray-600);">New York City</span>
+      <div class="contact-block">
+        <div class="contact-icon-circle">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-block-label">Parade Location</div>
+        <div class="contact-block-value">
+          5th Avenue &amp; 41st Street
+          <div class="contact-sub">New York City</div>
         </div>
       </div>
 
     </div>
+
+    <!-- Map embed -->
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.9066!2d-73.9822!3d40.7527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259aae7a0b1bd%3A0xb49cafb82537f1a7!2s5th%20Ave%20%26%2041st%20St%2C%20New%20York%2C%20NY%2010016!5e0!3m2!1sen!2sus!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Parade Route Start — 5th Ave &amp; 41st St, New York City"
+        aria-label="Google Maps showing parade start location at 5th Avenue and 41st Street, New York City">
+      </iframe>
+    </div>
+
   </div>
 </section><!-- /contact -->
 
@@ -1100,20 +1024,22 @@ html { scroll-behavior: smooth; }
 /* ── Scroll-reveal ── */
 (function(){
   if(!('IntersectionObserver' in window)) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const SELECTORS = [
     '.lp-gallery-item',
     '.event-card',
-    '.contact-item',
-    '#involve .container > div > div > div',   /* involve cards */
-    '#involve .container > div:last-child',     /* psfcu badge   */
+    '.contact-block',
+    '.involve-card',
+    '.psfcu-banner',
   ].join(',');
 
   const observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
         entry.target.style.opacity  = '1';
-        entry.target.style.transform = 'translateY(0)';
+        /* Clear inline transform so CSS :hover can apply freely */
+        entry.target.style.transform = '';
         observer.unobserve(entry.target);
       }
     });
@@ -1147,22 +1073,6 @@ html { scroll-behavior: smooth; }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
-
-/* ── Card hover effect for involve cards ── */
-document.querySelectorAll('#involve .container > div > div > div').forEach(function(card){
-  card.addEventListener('mouseenter', function(){
-    this.style.background = 'rgba(255,255,255,.14)';
-    this.style.borderColor = 'rgba(201,168,76,.5)';
-    this.style.transform = this.style.transform.includes('translateY(0)')
-      ? 'translateY(-4px)'
-      : (this.style.opacity === '1' ? 'translateY(-4px)' : this.style.transform);
-  });
-  card.addEventListener('mouseleave', function(){
-    this.style.background = 'rgba(255,255,255,.08)';
-    this.style.borderColor = 'rgba(255,255,255,.18)';
-    if(this.style.opacity === '1') this.style.transform = 'translateY(0)';
-  });
-});
 
 /* ── Site-header scroll state: transparent → solid navy past hero ── */
 (function(){
