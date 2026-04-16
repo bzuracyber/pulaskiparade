@@ -5,7 +5,12 @@
       "Bash(sed 's/_[a-f0-9]*\\\\.png$//')",
       "Bash(node generate-galleries.js)",
       "Bash(python3 -)",
-      "Bash(git -C \"C:\\\\Users\\\\cyber_test\\\\pulaskiparade\" status --short)"
+      "Bash(git -C \"C:\\\\Users\\\\cyber_test\\\\pulaskiparade\" status --short)",
+      "Bash(python -m http.server 8765)",
+      "Bash(curl -sS -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8765/index.html)",
+      "Bash(curl -sS http://localhost:8765/css/styles.css)",
+      "Bash(curl -sS http://localhost:8765/index.html)",
+      "Bash(pkill -f \"http.server 8765\")"
     ]
   }
 }
