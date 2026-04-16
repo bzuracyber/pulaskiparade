@@ -413,12 +413,12 @@ p { max-width: 70ch; }
 .hero {
   background: linear-gradient(135deg, rgba(200,16,46,.88) 0%, rgba(160,10,35,.75) 100%);
   color: var(--white);
-  padding-block: clamp(8rem, 18vw, 13rem);
+  min-height: 100vh;
+  padding-block: 0;
   position: relative;
   overflow: hidden;
   margin: 0;
   margin-bottom: 0;
-  padding-bottom: 0;
   line-height: 1;
   display: block;
 }
@@ -428,10 +428,10 @@ p { max-width: 70ch; }
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.72) 0%,
-    rgba(0,0,0,0.45) 55%,
-    rgba(0,0,0,0.15) 100%
+    135deg,
+    rgba(10, 5, 20, 0.82) 0%,
+    rgba(180, 10, 30, 0.55) 55%,
+    rgba(0, 0, 0, 0.70) 100%
   );
   z-index: 0;
   pointer-events: none;
@@ -457,7 +457,8 @@ p { max-width: 70ch; }
   grid-template-columns: 1fr 400px;
   gap: 4rem;
   align-items: center;
-  padding-top: 5rem;
+  min-height: 100vh;
+  padding-block: clamp(6rem, 10vw, 9rem);
 }
 
 .hero-eyebrow {
@@ -474,13 +475,13 @@ p { max-width: 70ch; }
   padding: .375rem .875rem;
   border-radius: 999px;
   margin-bottom: 1.25rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  text-shadow: none;
 }
 
 .hero h1 {
-  color: var(--white);
+  color: #ffffff;
   margin-bottom: 1.25rem;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 12px rgba(0,0,0,.55);
 }
 .hero h1 em {
   color: var(--gold-light);
@@ -489,12 +490,12 @@ p { max-width: 70ch; }
 }
 .hero-theme {
   font-size: clamp(.9rem, 2vw, 1.0625rem);
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.92);
   font-style: italic;
   margin-bottom: 1.5rem;
   max-width: 55ch;
   line-height: 1.5;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
 }
 .hero-meta {
   display: flex;
@@ -508,7 +509,7 @@ p { max-width: 70ch; }
   align-items: center;
   gap: .5rem;
   font-size: .9375rem;
-  color: rgba(255,255,255,.85);
+  color: rgba(255,255,255,.9);
   text-shadow: 0 2px 8px rgba(0,0,0,0.7);
 }
 .hero-meta-item svg {
@@ -519,11 +520,11 @@ p { max-width: 70ch; }
 
 /* Countdown card */
 .countdown-card {
-  background: rgba(200,16,46,.15);
-  border: 1px solid rgba(200,16,46,.3);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(201,168,76,.4);
   border-radius: var(--radius-lg);
   padding: 2rem;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   text-align: center;
 }
 .countdown-label {
@@ -545,10 +546,11 @@ p { max-width: 70ch; }
   display: block;
   font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 800;
-  color: var(--white);
+  color: #ffffff;
   line-height: 1;
   font-family: 'Playfair Display', serif;
   font-variant-numeric: tabular-nums;
+  text-shadow: 0 2px 8px rgba(0,0,0,.4);
 }
 .countdown-unit small {
   display: block;
@@ -560,7 +562,7 @@ p { max-width: 70ch; }
 }
 .countdown-date {
   font-size: .9375rem;
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.85);
   border-top: 1px solid rgba(255,255,255,.15);
   padding-top: 1rem;
 }
