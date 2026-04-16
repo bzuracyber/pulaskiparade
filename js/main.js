@@ -197,7 +197,7 @@
       if (reduce) {
         el.textContent = target;
       } else {
-        animateCount(el, target, 1400);
+        animateCount(el, target, 1600);
       }
       numObserver.unobserve(el);
     });

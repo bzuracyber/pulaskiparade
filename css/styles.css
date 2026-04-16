@@ -2090,8 +2090,52 @@ video.hero-bg {
 .d5 { transition-delay: .33s; }
 .d6 { transition-delay: .40s; }
 
-/* Hero parallax placeholder */
-.hero-bg { will-change: transform; }
+/* Hero parallax */
+.hero-video-wrap { will-change: transform; }
 
 /* Stats count-up */
 .stat-num { font-variant-numeric: tabular-nums; }
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--gold);
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 80ms linear;
+}
+
+/* Gold-rule draw-in */
+.gold-rule.gr-init {
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform .55s cubic-bezier(.22,.61,.36,1);
+}
+.gold-rule.gr-init.gr-visible { transform: scaleX(1); }
+
+/* Word-split reveal */
+.wr-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: inherit;
+}
+.wr-inner {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform .55s cubic-bezier(.22,.61,.36,1), opacity .35s ease;
+}
+.wr-visible .wr-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-rule.gr-init { transform: none; transition: none; }
+  .wr-inner { transform: none; opacity: 1; transition: none; }
+}
