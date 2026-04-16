@@ -4,7 +4,8 @@
       "Bash(sed 's/_[a-f0-9]*\\\\.jpg$//')",
       "Bash(sed 's/_[a-f0-9]*\\\\.png$//')",
       "Bash(node generate-galleries.js)",
-      "Bash(python3 -)"
+      "Bash(python3 -)",
+      "Bash(git -C \"C:\\\\Users\\\\cyber_test\\\\pulaskiparade\" status --short)"
     ]
   }
 }
