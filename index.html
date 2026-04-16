@@ -78,42 +78,18 @@ html { scroll-behavior: smooth; }
   position: relative;
   z-index: 10;
 }
-/* Force all hero text visible — overrides styles.css opacity:0 + heroFadeUp animation */
+/* Hero content stacking (animations + colors live in styles.css) */
+.hero-content,
 .hero h1,
 .hero-eyebrow,
-.hero-theme,
+.hero-sub,
 .hero-meta,
-.hero-actions {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
+.hero-btns,
+.countdown-card {
   position: relative;
   z-index: 10;
 }
-.hero h1 {
-  color: #ffffff !important;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9) !important;
-}
-.hero h1 em { color: var(--gold-light) !important; font-style: normal; }
-.hero-theme {
-  color: rgba(255,255,255,.92) !important;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9) !important;
-}
-.hero-eyebrow { color: var(--gold-light) !important; }
-.hero-meta-item {
-  color: rgba(255,255,255,.92) !important;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.5) !important;
-}
-.hero-meta-item svg { color: var(--gold-light) !important; }
-.countdown-card {
-  background: rgba(0,0,0,.58);
-  border: 1px solid rgba(201,168,76,.4);
-  backdrop-filter: blur(14px);
-}
-.countdown-num { color: #fff; }
-.countdown-label { color: var(--gold-light); }
-.countdown-date { color: rgba(255,255,255,.85); }
-.countdown-date strong { color: var(--gold-light); }
+.hero h1 em { font-style: normal; }
 
 /* SCROLL CUE */
 .scroll-cue {
@@ -168,14 +144,7 @@ html { scroll-behavior: smooth; }
 .gold-rule { width: 52px; height: 3px; background: var(--gold); margin: .75rem 0 1.75rem; }
 .gold-rule.center { margin-left: auto; margin-right: auto; }
 
-/* TIMELINE */
-.timeline { position: relative; padding-left: 2rem; }
-.timeline::before { content:''; position:absolute; left:.5rem; top:0; bottom:0; width:2px; background: var(--gray-200); }
-.tl-item { position: relative; padding-bottom: 2rem; }
-.tl-item::before { content:''; position:absolute; left:-1.625rem; top:.35rem; width:12px; height:12px; border-radius:50%; background: var(--red); border: 2px solid #fff; box-shadow: 0 0 0 2px var(--red); }
-.tl-year { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--red); margin-bottom:.25rem; }
-.tl-item h4 { font-size:1rem; color:var(--navy); margin-bottom:.35rem; }
-.tl-item p { font-size:.9rem; color:var(--gray-600); margin:0; }
+/* TIMELINE — styles live in styles.css (.timeline, .timeline-item, .timeline-year) */
 
 /* EVENT ROWS */
 .event-card { display:grid; grid-template-columns:72px 1fr; gap:1.25rem; align-items:start; background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:1.25rem; }
@@ -320,77 +289,29 @@ html { scroll-behavior: smooth; }
 /* ── Timeline mobile ── */
 @media (max-width: 767px) {
   .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0 1rem;
-    position: relative;
+    padding-left: 1.75rem;
   }
-
-  .timeline::before {
-    left: 1rem;
-    opacity: 0.3;
+  .timeline-item {
+    padding: .9rem 1rem;
   }
-
-  .tl-item {
-    display: flex;
-    flex-direction: column;
-    padding-left: 2.5rem;
-    padding-bottom: 0;
-    text-align: left;
+  .timeline-item::before {
+    left: calc(-1.75rem + .125rem);
+    top: 1.2rem;
   }
-
-  /* Reposition the dot to align with new left offset */
-  .tl-item::before {
-    left: -.125rem;
-  }
-
-  .tl-year {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-  }
-
-  .tl-item h4 {
-    font-size: 0.95rem;
-    margin: 0 0 0.25rem;
-  }
-
-  .tl-item p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    margin: 0;
-  }
+  .timeline-year { font-size: .75rem; }
+  .timeline-item h4 { font-size: .95rem; }
+  .timeline-item p { font-size: .85rem; line-height: 1.5; }
 }
 
-/* ── Stats bar mobile: 2-column grid ── */
-@media (max-width: 767px) {
-  .stats-bar,
-  .hero-stats,
-  .numbers-strip {
-    display: grid;
+/* ── Stats strip mobile: 2-column grid ── */
+@media (max-width: 700px) {
+  .stats-strip { padding: 2rem 0; }
+  .stats-strip .stats-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    text-align: center;
+    gap: 1.5rem 1rem;
   }
-
-  .stats-bar .stats-grid {
-    display: contents; /* let stat divs participate in the parent grid */
-  }
-
-  .stats-bar .stat,
-  .stats-bar .stat-item,
-  .hero-stats > div {
-    font-size: 0.8rem;
-    padding: 0.5rem;
-  }
-
-  .stats-bar .stat-num,
-  .stats-bar .stat-number {
-    font-size: 1.6rem;
-    display: block;
-  }
+  .stats-strip .stat-num { font-size: 1.9rem; }
+  .stats-strip .stat-label { font-size: .72rem; }
 }
 
 /* ── Hero mobile fixes (375px-safe) ── */
@@ -403,16 +324,17 @@ html { scroll-behavior: smooth; }
     word-break: break-word;
   }
 
-  #hero p, #hero .hero-theme, #hero .hero-subtitle {
+  #hero p, #hero .hero-sub {
     font-size: clamp(0.85rem, 3.5vw, 1rem);
     text-align: center;
     padding: 0 1rem;
     line-height: 1.5;
   }
 
+  #hero .hero-content { text-align: center; }
+
   #hero .hero-eyebrow {
-    display: block;
-    text-align: center;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
   }
@@ -422,18 +344,14 @@ html { scroll-behavior: smooth; }
     text-align: center;
   }
 
-  #hero .hero-actions,
-  #hero .hero-buttons,
-  #hero .cta-buttons {
+  #hero .hero-btns {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
     width: 100%;
   }
 
-  #hero .hero-actions a,
-  #hero .hero-buttons a,
-  #hero .cta-buttons a {
+  #hero .hero-btns a {
     width: 80%;
     text-align: center;
     padding: 0.75rem 1rem;
@@ -564,31 +482,31 @@ html { scroll-behavior: smooth; }
     <div class="hero-inner">
 
       <!-- LEFT: text -->
-      <div>
+      <div class="hero-content">
         <div class="hero-eyebrow">89th Annual Parade · 2026</div>
         <h1>New York City's <em>Pulaski Day Parade</em></h1>
-        <p class="hero-theme">
+        <p class="hero-sub">
           "For Our Freedom and Yours" — General Kościuszko &amp; General Pulaski,<br>
           Soldiers of Liberty for Poland and America —<br>
           Saluting 250 Years of American Independence
         </p>
         <div class="hero-meta">
           <div class="hero-meta-item">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Sunday, October 4, 2026
           </div>
           <div class="hero-meta-item">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Stepping off 12:30pm
           </div>
           <div class="hero-meta-item">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             5th Ave &amp; 41st St, NYC
           </div>
         </div>
-        <div class="hero-actions">
+        <div class="hero-btns">
           <a href="#parade" class="btn btn-primary">Parade Details</a>
-          <a href="#involve" class="btn btn-outline">Get Involved</a>
+          <a href="#involve" class="btn btn-secondary">Get Involved</a>
         </div>
       </div>
 
@@ -636,32 +554,28 @@ html { scroll-behavior: smooth; }
 <!-- ═══════════════════════════════════════════════
      STATS STRIP
 ════════════════════════════════════════════════════ -->
-<div class="stats-bar" style="background:var(--red);">
+<section class="stats-strip" aria-label="Parade by the numbers">
   <div class="container">
     <div class="stats-grid">
       <div class="stat">
-        <span class="stat-num">89</span>
-        <div class="stat-divider"></div>
+        <span class="stat-num" data-target="89">0</span>
         <span class="stat-label">Annual Parade</span>
       </div>
       <div class="stat">
-        <span class="stat-num">1937</span>
-        <div class="stat-divider"></div>
+        <span class="stat-num" data-target="1937">0</span>
         <span class="stat-label">Year Founded</span>
       </div>
       <div class="stat">
         <span class="stat-num">5th Ave</span>
-        <div class="stat-divider"></div>
         <span class="stat-label">New York City</span>
       </div>
       <div class="stat">
-        <span class="stat-num">250</span>
-        <div class="stat-divider"></div>
+        <span class="stat-num" data-target="250">0</span>
         <span class="stat-label">Years of Independence</span>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 
 <!-- ═══════════════════════════════════════════════
@@ -669,45 +583,30 @@ html { scroll-behavior: smooth; }
 ════════════════════════════════════════════════════ -->
 <section class="lp-section" id="about">
   <div class="container">
-    <div class="grid-2" style="gap:4rem;align-items:start;">
+    <div class="about-grid">
 
       <!-- Left: bio -->
-      <div>
+      <div class="about-bio">
         <span class="eyebrow">The Story</span>
         <h2 class="section-title">General Casimir Pulaski</h2>
         <div class="gold-rule"></div>
-        <div style="
-          border-radius: 10px;
-          overflow: hidden;
-          margin-bottom: 1.75rem;
-          box-shadow: 0 8px 32px rgba(0,0,0,.18);
-          max-width: 420px;
-        ">
+        <figure class="about-image-card">
           <img
             src="images/general-casimir-pulaski.jpg"
             alt="Bronze equestrian statue of General Casimir Pulaski, Father of the American Cavalry"
-            style="width:100%; height:320px; object-fit:cover; object-position:center top; display:block;"
             loading="lazy"
           >
-          <div style="
-            background: var(--navy);
-            color: rgba(255,255,255,.7);
-            font-size: .75rem;
-            letter-spacing: .07em;
-            text-transform: uppercase;
-            padding: .6rem 1rem;
-            text-align: center;
-          ">
+          <figcaption class="about-caption">
             General Casimir Pulaski · Father of the American Cavalry
-          </div>
-        </div>
-        <p style="margin-bottom:1.25rem;color:var(--gray-600);font-size:.9375rem;line-height:1.75;">
+          </figcaption>
+        </figure>
+        <p>
           Born in March 1748 in the Mazovia region of Poland, Casimir Pulaski grew up in a family deeply committed to Polish liberty. By the age of 15 he was already fighting against Russian interference in his homeland, joining the Bar Confederation — a noble uprising dedicated to preserving Polish sovereignty and independence.
         </p>
-        <p style="margin-bottom:1.25rem;color:var(--gray-600);font-size:.9375rem;line-height:1.75;">
+        <p>
           Forced into exile, Pulaski eventually made his way to Paris, where he met Benjamin Franklin. Franklin was so impressed that he wrote personally to General Washington: <em>"an officer renowned throughout Europe for his courage and bravery."</em> That letter opened the door to America's revolutionary cause.
         </p>
-        <p style="color:var(--gray-600);font-size:.9375rem;line-height:1.75;">
+        <p>
           Arriving in Philadelphia in 1777, Pulaski was appointed Brigadier-General of Cavalry by the Continental Congress, earning him the enduring title <strong>Father of the American Cavalry</strong>. He gave his life for American freedom at the Battle of Savannah on October 11, 1779. In 2009, President Obama posthumously granted him honorary American citizenship — one of only eight people in history to receive that distinction.
         </p>
       </div>
@@ -715,43 +614,43 @@ html { scroll-behavior: smooth; }
       <!-- Right: timeline -->
       <div>
         <div class="timeline">
-          <div class="tl-item">
-            <div class="tl-year">1748</div>
+          <div class="timeline-item">
+            <div class="timeline-year">1748</div>
             <h4>Birth in Poland</h4>
             <p>Born in the Mazovia region of Poland into a family of devoted patriots.</p>
           </div>
-          <div class="tl-item">
-            <div class="tl-year">~1763</div>
+          <div class="timeline-item">
+            <div class="timeline-year">~1763</div>
             <h4>Fighting for Polish Freedom</h4>
             <p>Joins the Bar Confederation, fighting Russian domination of Poland at age 15.</p>
           </div>
-          <div class="tl-item">
-            <div class="tl-year">~1775</div>
+          <div class="timeline-item">
+            <div class="timeline-year">~1775</div>
             <h4>Meeting Benjamin Franklin</h4>
             <p>Exiled to Paris, meets Franklin who writes a glowing letter of introduction to General Washington.</p>
           </div>
-          <div class="tl-item">
-            <div class="tl-year">1777</div>
+          <div class="timeline-item">
+            <div class="timeline-year">1777</div>
             <h4>Arrives in America</h4>
             <p>Appointed Brigadier-General of Cavalry by the Continental Congress — the Father of the American Cavalry.</p>
           </div>
-          <div class="tl-item">
-            <div class="tl-year">1779</div>
+          <div class="timeline-item">
+            <div class="timeline-year">1779</div>
             <h4>Death at Savannah</h4>
             <p>Mortally wounded during the Siege of Savannah on October 11 — a hero to two nations.</p>
           </div>
-          <div class="tl-item">
-            <div class="tl-year">1937</div>
+          <div class="timeline-item">
+            <div class="timeline-year">1937</div>
             <h4>Pulaski Day Parade Founded</h4>
             <p>The General Casimir Pulaski Memorial Parade Committee holds its first annual parade in New York City.</p>
           </div>
-          <div class="tl-item">
-            <div class="tl-year">2009</div>
+          <div class="timeline-item">
+            <div class="timeline-year">2009</div>
             <h4>Honorary American Citizenship</h4>
             <p>President Obama signs legislation granting Pulaski posthumous U.S. citizenship, one of only eight ever awarded.</p>
           </div>
-          <div class="tl-item">
-            <div class="tl-year">2026</div>
+          <div class="timeline-item current">
+            <div class="timeline-year">2026</div>
             <h4>89th Annual Parade</h4>
             <p>The tradition continues — October 4, 2026 on 5th Avenue, New York City.</p>
           </div>
@@ -1206,7 +1105,6 @@ html { scroll-behavior: smooth; }
     '.lp-gallery-item',
     '.event-card',
     '.contact-item',
-    '.tl-item',
     '#involve .container > div > div > div',   /* involve cards */
     '#involve .container > div:last-child',     /* psfcu badge   */
   ].join(',');

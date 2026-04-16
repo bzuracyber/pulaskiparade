@@ -168,9 +168,11 @@
   }, { passive: true });
 })();
 
-/* --- Stats Count-Up ---------------------------------------- */
+/* --- Stats Count-Up & Fade-In ------------------------------ */
 (function () {
   if (!('IntersectionObserver' in window)) return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function easeOutQuad(t) { return t * (2 - t); }
 
@@ -185,18 +187,39 @@
     requestAnimationFrame(step);
   }
 
-  const observer = new IntersectionObserver(entries => {
+  /* Count-up numeric stats */
+  const numObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const target = parseInt(el.dataset.target, 10);
-      if (!isNaN(target)) animateCount(el, target, 1400);
-      observer.unobserve(el);
+      if (isNaN(target)) { numObserver.unobserve(el); return; }
+      if (reduce) {
+        el.textContent = target;
+      } else {
+        animateCount(el, target, 1400);
+      }
+      numObserver.unobserve(el);
     });
   }, { threshold: 0.5 });
 
   document.querySelectorAll('.stat-num[data-target]').forEach(el => {
-    observer.observe(el);
+    numObserver.observe(el);
+  });
+
+  /* Fade-in all .stats-strip .stat blocks (including "5th Ave") */
+  const stats = document.querySelectorAll('.stats-strip .stat');
+  if (!stats.length) return;
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.3 });
+  stats.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+    fadeObserver.observe(el);
   });
 })();
 
