@@ -15,11 +15,51 @@
   <link rel="stylesheet" href="css/styles.css" />
 
   <style>
+/* ── Global mobile safety ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  section, .section, main > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: hidden;
+  }
+}
+
 /* ── Landing page overrides ── */
 html { scroll-behavior: smooth; }
 
 /* NAV — smooth single-page anchor nav */
 .nav-links a, .mobile-nav a { cursor: pointer; }
+
+/* ── Ensure only ONE nav visible at any screen width ── */
+/* Mobile nav is always hidden until .open is added by JS */
+.mobile-nav { display: none !important; }
+.mobile-nav.open { display: flex !important; flex-direction: column; }
+
+/* Desktop: hamburger hidden, links visible */
+@media (min-width: 768px) {
+  .hamburger { display: none !important; }
+  .nav-links { display: flex !important; }
+}
+
+/* Mobile: hamburger visible, desktop links hidden */
+@media (max-width: 767px) {
+  .hamburger { display: flex !important; }
+  .nav-links { display: none !important; }
+}
 
 /* HERO — true full viewport */
 .hero {
@@ -213,6 +253,235 @@ html { scroll-behavior: smooth; }
 }
 @media (max-width:500px) {
   .involve-grid { grid-template-columns:1fr; }
+}
+
+/* ── Get Involved mobile ── */
+@media (max-width: 767px) {
+  /* Cards grid — override inline display:grid with !important */
+  #involve .container > div:nth-child(2),
+  #involve .cards,
+  #involve .grid,
+  .involve-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    padding: 0 1rem;
+  }
+
+  /* Individual cards */
+  #involve .container > div:nth-child(2) > div,
+  #involve .card,
+  .involve-card {
+    width: 100%;
+    padding: 1.25rem;
+    box-sizing: border-box;
+  }
+
+  /* Buttons inside cards — override inline display:inline-block */
+  #involve .container > div:nth-child(2) > div > a,
+  #involve .card a,
+  #involve .card .btn,
+  .involve-card a {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    padding: 0.65rem;
+    margin-top: 0.75rem;
+    box-sizing: border-box;
+  }
+}
+
+/* ── Gallery mobile ── */
+@media (max-width: 767px) {
+  .lp-gallery,
+  .gallery,
+  .photo-grid,
+  #gallery .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0 0.75rem;
+  }
+
+  .lp-gallery-item {
+    aspect-ratio: unset;
+    height: 140px;
+  }
+
+  .lp-gallery-item img,
+  .gallery img,
+  .photo-grid img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 400px) {
+  .lp-gallery,
+  .gallery,
+  .photo-grid,
+  #gallery .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lp-gallery-item {
+    height: 200px;
+  }
+
+  .lp-gallery-item img,
+  .gallery img,
+  .photo-grid img {
+    height: 200px;
+  }
+}
+
+/* ── Timeline mobile ── */
+@media (max-width: 767px) {
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    position: relative;
+  }
+
+  .timeline::before {
+    left: 1rem;
+    opacity: 0.3;
+  }
+
+  .tl-item {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.5rem;
+    padding-bottom: 0;
+    text-align: left;
+  }
+
+  /* Reposition the dot to align with new left offset */
+  .tl-item::before {
+    left: -.125rem;
+  }
+
+  .tl-year {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  .tl-item h4 {
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem;
+  }
+
+  .tl-item p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+/* ── Stats bar mobile: 2-column grid ── */
+@media (max-width: 767px) {
+  .stats-bar,
+  .hero-stats,
+  .numbers-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .stats-bar .stats-grid {
+    display: contents; /* let stat divs participate in the parent grid */
+  }
+
+  .stats-bar .stat,
+  .stats-bar .stat-item,
+  .hero-stats > div {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .stats-bar .stat-num,
+  .stats-bar .stat-number {
+    font-size: 1.6rem;
+    display: block;
+  }
+}
+
+/* ── Hero mobile fixes (375px-safe) ── */
+@media (max-width: 767px) {
+  #hero h1 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 1rem;
+    word-break: break-word;
+  }
+
+  #hero p, #hero .hero-theme, #hero .hero-subtitle {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.5;
+  }
+
+  #hero .hero-eyebrow {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #hero .hero-meta {
+    justify-content: center;
+    text-align: center;
+  }
+
+  #hero .hero-actions,
+  #hero .hero-buttons,
+  #hero .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  #hero .hero-actions a,
+  #hero .hero-buttons a,
+  #hero .cta-buttons a {
+    width: 80%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+  }
+
+  .countdown-card,
+  .countdown,
+  #countdown {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+  }
+
+  .countdown-num,
+  .countdown .count-number {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  /* Prevent any horizontal overflow */
+  #hero .container,
+  #hero .hero-inner {
+    overflow-x: hidden;
+    max-width: 100%;
+    padding-inline: 1rem;
+  }
 }
 
 /* Neutralize any ::before / ::after from styles.css that conflict with inline z-index stacking */
