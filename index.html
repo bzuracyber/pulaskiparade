@@ -663,67 +663,108 @@ html { scroll-behavior: smooth; }
 <!-- ═══════════════════════════════════════════════
      GET INVOLVED — id="involve"
 ════════════════════════════════════════════════════ -->
-<section class="lp-section lp-section-navy" id="involve">
+<section id="involve" class="lp-section" style="background: var(--navy);">
   <div class="container">
 
-    <!-- Section Header -->
-    <div class="text-center" style="margin-bottom:3rem;">
-      <span class="eyebrow">Join Us</span>
-      <h2 class="section-title">Get Involved</h2>
+    <!-- Header -->
+    <div class="text-center" style="margin-bottom: 3rem;">
+      <span class="eyebrow" style="color: var(--gold-light);">Join Us</span>
+      <h2 class="section-title" style="color: #fff;">Get Involved</h2>
       <div class="gold-rule center"></div>
-      <p style="color:rgba(255,255,255,.7);font-size:.9375rem;margin-top:-.5rem;">Support the 89th Annual Pulaski Day Parade</p>
+      <p style="color: rgba(255,255,255,.7); max-width: 50ch; margin: 0 auto;">
+        Support the 89th Annual Pulaski Day Parade
+      </p>
     </div>
 
-    <!-- Cards -->
-    <div class="involve-grid" style="margin-bottom:2.5rem;">
+    <!-- Cards grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
 
-      <!-- 1. Parade Participation -->
-      <div class="involve-card">
-        <div class="involve-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <!-- Parade Participation -->
+      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3>Parade Participation</h3>
-        <p>March in the 89th Annual Pulaski Day Parade on 5th Avenue. Download the participation form and join us October 4, 2026.</p>
-        <a href="documents/2026_ParadeFormTentativeasof20260317.docx" class="btn btn-gold btn-sm">Download Form</a>
+        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Parade Participation</h3>
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">March in the 89th Annual Pulaski Day Parade on 5th Avenue. Download the participation form and join us October 4, 2026.</p>
+        <a href="documents/2026_ParadeFormTentativeasof20260317.docx"
+           style="display:inline-block;padding:.5rem 1.25rem;background:var(--gold);color:var(--navy);font-weight:700;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid var(--gold);">
+          Download Form
+        </a>
       </div>
 
-      <!-- 2. Sponsor -->
-      <div class="involve-card">
-        <div class="involve-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <!-- Become a Sponsor -->
+      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <h3>Become a Sponsor</h3>
-        <p>Multiple sponsorship levels available. Support Polish heritage and culture in New York City.</p>
-        <a href="documents/2026SPONSORSHIPLEVELS.docx" class="btn btn-outline btn-sm">Sponsorship Levels</a>
+        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Become a Sponsor</h3>
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">Multiple sponsorship levels available. Support Polish heritage and culture in New York City.</p>
+        <a href="documents/2026SPONSORSHIPLEVELS.docx"
+           style="display:inline-block;padding:.5rem 1.25rem;background:transparent;color:rgba(255,255,255,.9);font-weight:600;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid rgba(255,255,255,.5);">
+          Sponsorship Levels
+        </a>
       </div>
 
-      <!-- 3. Membership -->
-      <div class="involve-card">
-        <div class="involve-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <!-- Membership -->
+      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
-        <h3>Membership</h3>
-        <p>Join the GPMPC. Renewal and new member forms available in Polish and English.</p>
-        <a href="documents/2026GPMPCMembershipRenewalForminPolishandEnglish.pdf" class="btn btn-outline btn-sm">Join Today</a>
+        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Membership</h3>
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">Join the GPMPC. Renewal and new member forms available in Polish and English.</p>
+        <a href="documents/2026GPMPCMembershipRenewalForminPolishandEnglish.pdf"
+           style="display:inline-block;padding:.5rem 1.25rem;background:transparent;color:rgba(255,255,255,.9);font-weight:600;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid rgba(255,255,255,.5);">
+          Join Today
+        </a>
       </div>
 
-      <!-- 4. Journal -->
-      <div class="involve-card">
-        <div class="involve-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6z"/></svg>
+      <!-- Journal Advertising -->
+      <div style="background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 2rem 1.5rem; transition: all .25s ease;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="22" height="22" fill="none" stroke="#1a2744" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         </div>
-        <h3>Journal Advertising</h3>
-        <p>Advertise in the official Pulaski Day Parade Journal.</p>
-        <a href="documents/JournalPage.pdf" class="btn btn-outline btn-sm">Journal Contract</a>
+        <h3 style="color:#fff;font-size:1.05rem;margin-bottom:.6rem;">Journal Advertising</h3>
+        <p style="color:rgba(255,255,255,.65);font-size:.875rem;margin-bottom:1.5rem;">Advertise in the official Pulaski Day Parade Journal.</p>
+        <a href="documents/JournalPage.pdf"
+           style="display:inline-block;padding:.5rem 1.25rem;background:transparent;color:rgba(255,255,255,.9);font-weight:600;font-size:.875rem;border-radius:6px;text-decoration:none;border:2px solid rgba(255,255,255,.5);">
+          Journal Contract
+        </a>
       </div>
 
-    </div>
+    </div><!-- /grid -->
 
-    <!-- Sponsor Badge -->
-    <div class="sponsor-badge">
-      <strong>Official Sponsor &amp; Partner</strong>
-      Polish &amp; Slavic Federal Credit Union — proudly supporting the Pulaski Day Parade
-      &nbsp;&nbsp;<a href="https://www.psfcu.com" target="_blank" rel="noopener">Visit psfcu.com →</a>
+    <!-- PSFCU Sponsor Badge — with logo -->
+    <div style="
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(201,168,76,.35);
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    ">
+      <img src="images/polishslavic.jpg"
+           alt="Polish &amp; Slavic Federal Credit Union"
+           style="height: 56px; width: auto; border-radius: 6px; object-fit: contain; background:#fff; padding: 6px 10px;">
+      <div style="flex:1; min-width: 200px;">
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.35rem;">
+          Official Sponsor &amp; Partner
+        </div>
+        <div style="color:#fff;font-weight:600;font-size:1rem;margin-bottom:.25rem;">
+          Polish &amp; Slavic Federal Credit Union
+        </div>
+        <div style="color:rgba(255,255,255,.6);font-size:.875rem;">
+          Proudly supporting the Pulaski Day Parade and the Polish-American community.
+        </div>
+      </div>
+      <a href="https://www.psfcu.com" target="_blank" rel="noopener"
+         style="display:inline-block;padding:.6rem 1.5rem;background:var(--gold);color:var(--navy);font-weight:700;font-size:.875rem;border-radius:6px;text-decoration:none;white-space:nowrap;">
+        Visit psfcu.com →
+      </a>
     </div>
 
   </div>
@@ -853,70 +894,106 @@ html { scroll-behavior: smooth; }
 ════════════════════════════════════════════════════ -->
 <script src="js/main.js"></script>
 <script>
-// Countdown
+/* ── Countdown ── */
 (function(){
-  var target = new Date('2026-10-04T12:30:00');
-  function pad(n){ return String(Math.floor(n)).padStart(2,'0'); }
+  const target = new Date('2026-10-04T12:30:00');
   function tick(){
-    var diff = target - new Date();
+    const diff = target - new Date();
     if(diff <= 0) return;
-    var d = document;
-    d.getElementById('cd-days')    && (d.getElementById('cd-days').textContent    = pad(diff/864e5));
-    d.getElementById('cd-hours')   && (d.getElementById('cd-hours').textContent   = pad((diff%864e5)/36e5));
-    d.getElementById('cd-minutes') && (d.getElementById('cd-minutes').textContent = pad((diff%36e5)/6e4));
-    d.getElementById('cd-seconds') && (d.getElementById('cd-seconds').textContent = pad((diff%6e4)/1e3));
+    const pad = n => String(Math.floor(n)).padStart(2,'0');
+    const el = id => document.getElementById(id);
+    el('cd-days')    && (el('cd-days').textContent    = pad(diff / 864e5));
+    el('cd-hours')   && (el('cd-hours').textContent   = pad((diff % 864e5) / 36e5));
+    el('cd-minutes') && (el('cd-minutes').textContent = pad((diff % 36e5) / 6e4));
+    el('cd-seconds') && (el('cd-seconds').textContent = pad((diff % 6e4) / 1e3));
   }
-  tick();
-  setInterval(tick, 1000);
+  tick(); setInterval(tick, 1000);
 })();
 
-// Lightbox
+/* ── Lightbox ── */
 (function(){
-  var lb     = document.getElementById('lightbox');
-  var lbImg  = document.getElementById('lb-img');
-  var lbClose= document.getElementById('lb-close');
+  const lb    = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbClose = document.getElementById('lb-close');
+  if(!lb) return;
   document.querySelectorAll('.lp-gallery-item').forEach(function(item){
     item.addEventListener('click', function(){
       lbImg.src = this.dataset.src || this.querySelector('img').src;
       lb.classList.add('open');
     });
   });
-  lbClose.addEventListener('click', function(){ lb.classList.remove('open'); });
+  lbClose && lbClose.addEventListener('click', function(){ lb.classList.remove('open'); });
   lb.addEventListener('click', function(e){ if(e.target === lb) lb.classList.remove('open'); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') lb.classList.remove('open'); });
 })();
 
-// Scroll-reveal
+/* ── Scroll-reveal ── */
 (function(){
   if(!('IntersectionObserver' in window)) return;
-  var obs = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'none';
-        obs.unobserve(e.target);
+
+  const SELECTORS = [
+    '.lp-gallery-item',
+    '.event-card',
+    '.contact-item',
+    '.tl-item',
+    '#involve .container > div > div > div',   /* involve cards */
+    '#involve .container > div:last-child',     /* psfcu badge   */
+  ].join(',');
+
+  const observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.style.opacity  = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
       }
     });
-  }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
-  document.querySelectorAll('.involve-card,.event-card,.contact-item,.tl-item,.lp-gallery-item').forEach(function(el){
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity .55s ease, transform .55s ease';
-    obs.observe(el);
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll(SELECTORS).forEach(function(el, i){
+    el.style.opacity   = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity .55s ease ' + (i % 4 * 0.1) + 's, transform .55s ease ' + (i % 4 * 0.1) + 's';
+    observer.observe(el);
+  });
+
+  /* Section headings */
+  document.querySelectorAll('.section-title, .eyebrow, .gold-rule').forEach(function(el){
+    if(el.closest('.hero')) return;
+    el.style.opacity   = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
   });
 })();
 
-// Scroll-to-top button
+/* ── Scroll-to-top ── */
 (function(){
-  var btn = document.getElementById('scrollTop');
+  const btn = document.getElementById('scrollTop');
   if(!btn) return;
   window.addEventListener('scroll', function(){
     btn.classList.toggle('visible', window.scrollY > 500);
   });
   btn.addEventListener('click', function(){
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+/* ── Card hover effect for involve cards ── */
+document.querySelectorAll('#involve .container > div > div > div').forEach(function(card){
+  card.addEventListener('mouseenter', function(){
+    this.style.background = 'rgba(255,255,255,.14)';
+    this.style.borderColor = 'rgba(201,168,76,.5)';
+    this.style.transform = this.style.transform.includes('translateY(0)')
+      ? 'translateY(-4px)'
+      : (this.style.opacity === '1' ? 'translateY(-4px)' : this.style.transform);
+  });
+  card.addEventListener('mouseleave', function(){
+    this.style.background = 'rgba(255,255,255,.08)';
+    this.style.borderColor = 'rgba(255,255,255,.18)';
+    if(this.style.opacity === '1') this.style.transform = 'translateY(0)';
+  });
+});
 </script>
 
 </body>
