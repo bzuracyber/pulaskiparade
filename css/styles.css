@@ -2154,3 +2154,82 @@ body.nav-open { overflow: hidden; }
   .gold-rule.gr-init { transform: none; transition: none; }
   .wr-inner { transform: none; opacity: 1; transition: none; }
 }
+
+/* --- Hero mobile fixes v2 ---------------------------------- */
+
+/* 3. Solid header background on mobile — always-on, not just when scrolled */
+@media (max-width: 900px) {
+  .site-header {
+    background: rgba(20, 10, 25, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .site-header.scrolled {
+    background: var(--navy);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* 4. Top-bar hidden on mobile — info repeated in hero meta row */
+@media (max-width: 768px) {
+  .info-banner { display: none; }
+}
+
+/* 1, 2, 5, 7. Hero layout: let content dictate height, clear fixed header */
+@media (max-width: 900px) {
+  .hero {
+    height: auto !important;
+    min-height: 100svh !important;
+    max-height: none !important;
+    align-items: flex-start !important;
+    padding-top: 7rem;       /* clears info-bar ~40px + header ~72px + buffer */
+    padding-bottom: 3rem;
+  }
+
+  /* Remove any fixed height on inner containers that cause bottom clipping */
+  .hero-inner {
+    height: auto !important;
+    min-height: unset !important;
+  }
+
+  /* 5. Countdown card — breathing room before stats strip */
+  .countdown-card {
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 2. Reduce top clearance slightly at smallest screens (no info-bar visible) */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 6.5rem !important;
+  }
+
+  /* 6. Countdown card — tighter padding and number sizing */
+  .countdown-card {
+    padding-inline: 1rem;
+  }
+  .countdown-grid {
+    gap: .4rem;
+  }
+  .countdown-num {
+    font-size: clamp(1.75rem, 8vw, 2.25rem) !important;
+  }
+}
+
+/* 9. Darker gradient overlay on mobile for readability — top + bottom boosted */
+@media (max-width: 768px) {
+  .hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(10,  5, 20, .88)  0%,
+      rgba(10,  5, 20, .65) 35%,
+      rgba(139, 0,  0, .45) 75%,
+      rgba(0,   0,  0, .85) 100%
+    );
+  }
+}
