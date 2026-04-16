@@ -11,7 +11,7 @@
   <meta property="og:image" content="https://bzuracyber.github.io/pulaskiparade/images/Gen.CasimirPulaski.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 
   <style>
@@ -40,26 +40,6 @@ img, video, iframe {
 
 /* ── Landing page overrides ── */
 html { scroll-behavior: smooth; }
-
-/* NAV — smooth single-page anchor nav */
-.nav-links a, .mobile-nav a { cursor: pointer; }
-
-/* ── Ensure only ONE nav visible at any screen width ── */
-/* Mobile nav is always hidden until .open is added by JS */
-.mobile-nav { display: none !important; }
-.mobile-nav.open { display: flex !important; flex-direction: column; }
-
-/* Desktop: hamburger hidden, links visible */
-@media (min-width: 768px) {
-  .hamburger { display: none !important; }
-  .nav-links { display: flex !important; }
-}
-
-/* Mobile: hamburger visible, desktop links hidden */
-@media (max-width: 767px) {
-  .hamburger { display: flex !important; }
-  .nav-links { display: none !important; }
-}
 
 /* HERO — true full viewport */
 .hero {
@@ -500,18 +480,18 @@ html { scroll-behavior: smooth; }
 <body>
 
 <!-- ═══════════════════════════════════════════════
-     HERO SECTION (top bar + nav + video + content)
+     SITE HEADER (fixed — transparent over hero, solid navy on scroll)
 ════════════════════════════════════════════════════ -->
-<section class="hero" id="hero">
+<header class="site-header" id="siteHeader">
 
-  <!-- Top Bar -->
-  <div class="top-bar">
+  <!-- Info banner (was top-bar) -->
+  <div class="info-banner">
     <div class="container">
       <div>
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         5th Avenue, New York City &nbsp;|&nbsp; October 4, 2026 at 12:30pm
       </div>
-      <div class="top-bar-right">
+      <div class="info-banner-right">
         <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:.3rem"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
         <a href="mailto:events@pulaskiparade.org">events@pulaskiparade.org</a>
         &nbsp;|&nbsp;
@@ -520,48 +500,45 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
 
-  <!-- Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <div class="navbar-inner">
-        <a href="#hero" class="navbar-brand">
-          <div class="navbar-logo">
-            <img src="images/Gen.CasimirPulaski.png" alt="General Casimir Pulaski" style="width:52px;height:52px;object-fit:contain;" />
-          </div>
-          <div class="navbar-brand-text">
-            <strong>Pulaski Day Parade</strong>
-            <span>New York City · Est. 1937</span>
-          </div>
-        </a>
-
-        <div class="nav-links" id="navLinks">
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#parade">Parade</a>
-          <a href="#events">Events</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#involve">Get Involved</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+  <!-- Main header row -->
+  <div class="header-inner">
+    <a href="#hero" class="header-logo" aria-label="Pulaski Day Parade — Home">
+      <img src="images/Gen.CasimirPulaski.png" alt="General Casimir Pulaski" />
+      <div class="header-logo-text">
+        <strong>Pulaski Day Parade</strong>
+        <span>New York City · Est. 1937</span>
       </div>
+    </a>
 
-      <!-- Mobile Nav -->
-      <div class="mobile-nav" id="mobileNav">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#parade">Parade</a>
-        <a href="#events">Events</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#involve">Get Involved</a>
-        <a href="#contact">Contact</a>
-        <a href="mailto:events@pulaskiparade.org" class="btn btn-primary mobile-nav-btn">Email Us</a>
+    <button class="nav-toggle" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="header-nav" id="mobileNav" aria-label="Main navigation">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#parade">Parade</a>
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#involve">Get Involved</a>
+      <a href="#contact">Contact</a>
+      <div class="nav-mobile-ctas">
+        <a href="mailto:events@pulaskiparade.org" class="btn btn-secondary btn-sm">Email Us</a>
+        <a href="#parade" class="btn btn-primary btn-sm">Parade Details</a>
       </div>
+    </nav>
+
+    <div class="header-ctas">
+      <a href="mailto:events@pulaskiparade.org" class="btn btn-secondary btn-sm">Email Us</a>
+      <a href="#parade" class="btn btn-primary btn-sm">Parade Details</a>
     </div>
-  </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     HERO SECTION (video + content)
+════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
 
   <!-- 1. Video background — lowest layer -->
   <div style="position:absolute;inset:0;z-index:0;overflow:hidden;">
@@ -1121,45 +1098,48 @@ html { scroll-behavior: smooth; }
 
 
 <!-- ═══════════════════════════════════════════════
-     FOOTER
+     FOOTER (Empire-pattern site-footer)
 ════════════════════════════════════════════════════ -->
-<footer class="lp-footer">
+<footer class="site-footer">
   <div class="container">
-    <div class="grid-3" style="gap:3rem;align-items:start;">
+    <div class="footer-grid">
 
-      <!-- Left: Brand -->
-      <div>
+      <!-- Brand -->
+      <div class="footer-brand">
         <div class="brand">General Casimir Pulaski Memorial Parade Committee</div>
-        <p style="margin-top:.5rem;line-height:1.7;">Celebrating Polish-American heritage since 1937.<br>The 89th Annual Pulaski Day Parade — October 4, 2026.</p>
-      </div>
-
-      <!-- Center: Quick Links -->
-      <div style="text-align:center;">
-        <div style="color:#fff;font-weight:600;margin-bottom:1rem;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;">Quick Links</div>
-        <div style="display:flex;flex-direction:column;gap:.5rem;">
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#parade">Parade</a>
-          <a href="#events">Events</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#contact">Contact</a>
+        <p>Celebrating Polish-American heritage since 1937.<br>The 89th Annual Pulaski Day Parade — October 4, 2026.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener" aria-label="Facebook">f</a>
         </div>
       </div>
 
-      <!-- Right: Contact -->
-      <div style="text-align:right;">
-        <div style="color:#fff;font-weight:600;margin-bottom:1rem;font-size:.8125rem;letter-spacing:.08em;text-transform:uppercase;">Get in Touch</div>
-        <div style="display:flex;flex-direction:column;gap:.5rem;">
-          <a href="mailto:events@pulaskiparade.org">events@pulaskiparade.org</a>
-          <a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener">Facebook · PulaskiParadeNY</a>
-        </div>
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#parade">Parade</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Get in Touch -->
+      <div class="footer-col">
+        <h4>Get in Touch</h4>
+        <ul>
+          <li><a href="mailto:events@pulaskiparade.org">events@pulaskiparade.org</a></li>
+          <li><a href="https://www.facebook.com/PulaskiParadeNY" target="_blank" rel="noopener">Facebook · PulaskiParadeNY</a></li>
+        </ul>
       </div>
 
     </div>
 
-    <div class="footer-bottom-bar">
-      <span>© 2026 General Casimir Pulaski Memorial Parade Committee, Inc. All rights reserved.</span>
-      <span>Built as a single-page demo</span>
+    <div class="footer-bottom">
+      <p>© 2026 General Casimir Pulaski Memorial Parade Committee, Inc. All rights reserved.</p>
+      <p>Built as a single-page demo</p>
     </div>
   </div>
 </footer>
@@ -1286,9 +1266,23 @@ document.querySelectorAll('#involve .container > div > div > div').forEach(funct
   });
 });
 
+/* ── Site-header scroll state: transparent → solid navy past hero ── */
+(function(){
+  const header = document.getElementById('siteHeader');
+  const hero   = document.getElementById('hero');
+  if(!header) return;
+  function update(){
+    const trigger = hero ? hero.offsetHeight - 80 : 400;
+    header.classList.toggle('scrolled', window.scrollY > trigger);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
 /* ── Smooth scroll with navbar offset + mobile menu close ── */
 (function(){
-  const navbar = document.querySelector('.navbar, nav, header');
+  const navbar = document.querySelector('.site-header, nav, header');
   const mobileNav = document.getElementById('mobileNav');
   const hamburger = document.getElementById('hamburger');
 
