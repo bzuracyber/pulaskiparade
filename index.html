@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="images/Gen.CasimirPulaski.png">
-  <link rel="apple-touch-icon" href="images/Gen.CasimirPulaski.png">
+  <link rel="icon" type="image/jpeg" href="images/commons/pulaski-allen-ginter.jpg">
+  <link rel="apple-touch-icon" href="images/commons/pulaski-allen-ginter.jpg">
   <meta name="theme-color" content="#C8102E">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>89th Annual Pulaski Day Parade · NYC · October 4, 2026</title>
@@ -14,13 +14,13 @@
   <meta property="og:url"         content="https://bzuracyber.github.io/pulaskiparade/" />
   <meta property="og:title"       content="89th Annual Pulaski Day Parade · NYC · October 4, 2026" />
   <meta property="og:description" content="Join us on 5th Avenue, New York City for the 89th Annual General Casimir Pulaski Memorial Parade — October 4, 2026, stepping off at 12:30pm." />
-  <meta property="og:image"       content="https://bzuracyber.github.io/pulaskiparade/images/Gen.CasimirPulaski.png" />
+  <meta property="og:image"       content="https://bzuracyber.github.io/pulaskiparade/images/commons/pulaski-styka-1918.jpg" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="89th Annual Pulaski Day Parade · NYC · October 4, 2026" />
   <meta name="twitter:description" content="Join us on 5th Avenue, New York City for the 89th Annual General Casimir Pulaski Memorial Parade — October 4, 2026." />
-  <meta name="twitter:image"       content="https://bzuracyber.github.io/pulaskiparade/images/Gen.CasimirPulaski.png" />
+  <meta name="twitter:image"       content="https://bzuracyber.github.io/pulaskiparade/images/commons/pulaski-styka-1918.jpg" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -34,7 +34,7 @@
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "isAccessibleForFree": true,
-    "image": "https://bzuracyber.github.io/pulaskiparade/images/Gen.CasimirPulaski.png",
+    "image": "https://bzuracyber.github.io/pulaskiparade/images/commons/pulaski-styka-1918.jpg",
     "url": "https://bzuracyber.github.io/pulaskiparade/",
     "location": {
       "@type": "Place",
@@ -371,6 +371,16 @@ img, video, iframe {
 <body>
 
 <!-- ═══════════════════════════════════════════════
+     DRAFT MOCKUP BANNER — non-production notice
+════════════════════════════════════════════════════ -->
+<div role="region" aria-label="Draft mockup notice"
+     style="position:relative;z-index:100;background:#1a1a1a;color:#f4c430;font-family:'Inter',system-ui,sans-serif;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:.5rem 1rem;border-bottom:2px solid #f4c430;">
+  <strong style="color:#fff;">Draft Mockup</strong>
+  &nbsp;·&nbsp; Unofficial design concept — not affiliated with the General Casimir Pulaski Memorial Parade Committee
+  &nbsp;·&nbsp; All imagery licensed from <a href="https://commons.wikimedia.org/" style="color:#f4c430;text-decoration:underline;">Wikimedia Commons</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════
      SITE HEADER (fixed — transparent over hero, solid navy on scroll)
 ════════════════════════════════════════════════════ -->
 <header class="site-header" id="siteHeader">
@@ -394,7 +404,7 @@ img, video, iframe {
   <!-- Main header row -->
   <div class="header-inner">
     <a href="#hero" class="header-logo" aria-label="Pulaski Day Parade — Home">
-      <img src="images/Gen.CasimirPulaski.png" alt="General Casimir Pulaski memorial medallion" decoding="async" />
+      <img src="images/commons/pulaski-allen-ginter.jpg" alt="Portrait of General Casimir Pulaski, from the Great Generals series (1888), Metropolitan Museum of Art" decoding="async" />
       <div class="header-logo-text">
         <strong>Pulaski Day Parade</strong>
         <span>New York City · Est. 1937</span>
@@ -431,12 +441,12 @@ img, video, iframe {
 ════════════════════════════════════════════════════ -->
 <section class="hero" id="hero">
 
-  <!-- 1. Video background — lowest layer -->
-  <div class="hero-video-wrap" style="position:absolute;inset:0;z-index:0;overflow:hidden;">
-    <video autoplay muted loop playsinline
-      style="width:100%;height:100%;object-fit:cover;display:block;">
-      <source src="images/hero.mp4" type="video/mp4">
-    </video>
+  <!-- 1. Background image — lowest layer (Wikimedia Commons, CC BY 4.0) -->
+  <div class="hero-video-wrap" role="img"
+       aria-label="Pulaski Day Parade 2023, Fifth Avenue, New York City — photo by Jakub Hałun"
+       style="position:absolute;inset:0;z-index:0;overflow:hidden;
+              background-image:url('images/commons/parade-2023-halun-1.jpg');
+              background-size:cover;background-position:center 30%;">
   </div>
 
   <!-- 2. Dark overlay — sits on top of video -->
@@ -565,8 +575,8 @@ img, video, iframe {
         <div class="gold-rule"></div>
         <figure class="about-image-card">
           <img
-            src="images/general-casimir-pulaski.jpg"
-            alt="Bronze equestrian statue of General Casimir Pulaski, Father of the American Cavalry"
+            src="images/commons/pulaski-statue-hartford.jpg"
+            alt="Bronze equestrian statue of General Casimir Pulaski, Hartford, Connecticut — Father of the American Cavalry"
             loading="lazy"
             decoding="async"
           >
@@ -647,7 +657,13 @@ img, video, iframe {
 
       <!-- Photo -->
       <div class="marshal-photo">
-        <img src="images/GrandMarshalKorga2026.jpg" alt="Dr. Iwona Korga, 2026 Grand Marshal of the Pulaski Day Parade" loading="lazy" decoding="async">
+        <div role="img" aria-label="Grand Marshal portrait placeholder"
+             style="aspect-ratio:3/4;background:linear-gradient(135deg,#1a2a4a 0%,#2c3e6b 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:rgba(255,255,255,.78);padding:1.5rem;text-align:center;font-family:'Inter',system-ui,sans-serif;">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true" style="opacity:.45;margin-bottom:.75rem;"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/></svg>
+          <div style="font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;opacity:.7;margin-bottom:.4rem;">Portrait</div>
+          <div style="font-size:.9375rem;line-height:1.4;max-width:22ch;">Photograph of the 2026 Grand Marshal will appear here in the final design.</div>
+          <div style="font-size:.6875rem;opacity:.5;margin-top:1rem;letter-spacing:.1em;text-transform:uppercase;">Draft mockup · Placeholder</div>
+        </div>
         <div class="marshal-photo-frame" aria-hidden="true"></div>
       </div>
 
@@ -763,36 +779,39 @@ img, video, iframe {
 
     <!-- Section Header -->
     <div class="text-center" style="margin-bottom:2.5rem;">
-      <span class="eyebrow">Parade Memories</span>
+      <span class="eyebrow">Parade Memories &amp; Heritage</span>
       <h2 class="section-title">Photo Gallery</h2>
       <div class="gold-rule center"></div>
-      <p style="color:var(--gray-600);font-size:.9375rem;margin-top:-.25rem;margin-inline:auto;">Photos by Beata Kruzel and others · 2024–2026</p>
+      <p style="color:var(--gray-600);font-size:.9375rem;margin-top:-.25rem;margin-inline:auto;">A curated mix of parade moments and Polish heritage imagery — all public domain or Creative Commons licensed. See full credits in the footer.</p>
     </div>
 
     <div class="lp-gallery">
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/2026_89th_Gen._Casimir_Pulaski_Memorial_Parade_2026_=__2026_Grand_Marshal_Sash_Ceremony__=_Photos_by_Beata_Kruzel_Congratulations_to_the_202_0562532ef6.jpg" aria-label="Open photo: 2026 Grand Marshal Sash Ceremony">
-        <img src="images/2026_89th_Gen._Casimir_Pulaski_Memorial_Parade_2026_=__2026_Grand_Marshal_Sash_Ceremony__=_Photos_by_Beata_Kruzel_Congratulations_to_the_202_0562532ef6.jpg" loading="lazy" decoding="async" alt="2026 Grand Marshal Sash Ceremony, photos by Beata Kruzel" />
+      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/commons/parade-2023-halun-1.jpg" aria-label="Open photo: Pulaski Day Parade 2023, New York City">
+        <img src="images/commons/parade-2023-halun-1.jpg" loading="lazy" decoding="async" alt="Pulaski Day Parade 2023, Fifth Avenue, New York City — photo by Jakub Hałun (CC BY 4.0)" />
       </div>
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/2026_89th_Gen._Casimir_Pulaski_Memorial_Parade_2026_=__2026_Grand_Marshal_Sash_Ceremony__=_Photos_by_Beata_Kruzel_Congratulations_to_the_202_33ab450448.jpg" aria-label="Open photo: 2026 Grand Marshal Sash Ceremony">
-        <img src="images/2026_89th_Gen._Casimir_Pulaski_Memorial_Parade_2026_=__2026_Grand_Marshal_Sash_Ceremony__=_Photos_by_Beata_Kruzel_Congratulations_to_the_202_33ab450448.jpg" loading="lazy" decoding="async" alt="2026 Grand Marshal Sash Ceremony, photos by Beata Kruzel" />
+      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/commons/parade-2023-halun-2.jpg" aria-label="Open photo: Pulaski Day Parade 2023 marchers, New York City">
+        <img src="images/commons/parade-2023-halun-2.jpg" loading="lazy" decoding="async" alt="Pulaski Day Parade 2023 marchers, Fifth Avenue, New York City — photo by Jakub Hałun (CC BY 4.0)" />
       </div>
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/2025_88th_Gen._Casimir_Pulaski_Memorial_Parade_2025_Review_of_2025_Pulaski_Day_Parade_5th_Ave._New_York_City_Photos_by_Beata_Kruzel_2025_Pul_1566121722.jpg" aria-label="Open photo: 2025 Pulaski Day Parade on 5th Avenue">
-        <img src="images/2025_88th_Gen._Casimir_Pulaski_Memorial_Parade_2025_Review_of_2025_Pulaski_Day_Parade_5th_Ave._New_York_City_Photos_by_Beata_Kruzel_2025_Pul_1566121722.jpg" loading="lazy" decoding="async" alt="2025 Pulaski Day Parade, 5th Avenue New York City, photos by Beata Kruzel" />
+      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/commons/savannah-keller.jpg" aria-label="Open image: Attack on Savannah, 1779">
+        <img src="images/commons/savannah-keller.jpg" loading="lazy" decoding="async" alt="Attack on Savannah, 10 October 1779 — illustration by A. I. Keller, National Archives (Public Domain)" />
       </div>
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/2025_88th_Gen._Casimir_Pulaski_Memorial_Parade_2025_Review_of_2025_Pulaski_Day_Parade_5th_Ave._New_York_City_Photos_by_Beata_Kruzel_2025_Pul_1687993410.jpg" aria-label="Open photo: 2025 Pulaski Day Parade on 5th Avenue">
-        <img src="images/2025_88th_Gen._Casimir_Pulaski_Memorial_Parade_2025_Review_of_2025_Pulaski_Day_Parade_5th_Ave._New_York_City_Photos_by_Beata_Kruzel_2025_Pul_1687993410.jpg" loading="lazy" decoding="async" alt="2025 Pulaski Day Parade marchers, 5th Avenue New York City, photos by Beata Kruzel" />
+      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/commons/pulaski-chelmonski.jpg" aria-label="Open image: Pułaski at Częstochowa">
+        <img src="images/commons/pulaski-chelmonski.jpg" loading="lazy" decoding="async" alt="Kazimierz Pułaski at Częstochowa during the Bar Confederation — painting by Józef Chełmoński (Public Domain)" />
       </div>
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/2025_2025_Pulaski_Parade_Banquet_Hon._Arkadiusz_Baginski_Grand_Marshal_c6844e68f4.jpg" aria-label="Open photo: 2025 Pulaski Parade Banquet">
-        <img src="images/2025_2025_Pulaski_Parade_Banquet_Hon._Arkadiusz_Baginski_Grand_Marshal_c6844e68f4.jpg" loading="lazy" decoding="async" alt="2025 Pulaski Parade Banquet, Grand Marshal Hon. Arkadiusz Bagiński" />
+      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/commons/polish-folk-lubuski.jpg" aria-label="Open photo: Lubuski Song and Dance Ensemble">
+        <img src="images/commons/polish-folk-lubuski.jpg" loading="lazy" decoding="async" alt="Lubuski Song and Dance Ensemble in traditional dąbrowieckie costumes, Zielona Góra 1974 — photo by Bogusław Linette (CC BY-SA 3.0 PL)" />
       </div>
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/GrandMarshalKorga2026.jpg" aria-label="Open photo: Dr. Iwona Korga, 2026 Grand Marshal">
-        <img src="images/GrandMarshalKorga2026.jpg" loading="lazy" decoding="async" alt="Dr. Iwona Korga, 2026 Grand Marshal of the Pulaski Day Parade" />
+      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/commons/pulaski-styka-1918.jpg" aria-label="Open image: Portrait of Kazimierz Pułaski">
+        <img src="images/commons/pulaski-styka-1918.jpg" loading="lazy" decoding="async" alt="Portrait of Kazimierz Pułaski — Jan Styka, 1918 (Public Domain)" />
       </div>
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/Ryszard_headshot.jpg" aria-label="Open photo: Parade Committee member">
-        <img src="images/Ryszard_headshot.jpg" loading="lazy" decoding="async" alt="Parade Committee member portrait" />
+      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/commons/pulaski-statue-hartford.jpg" aria-label="Open image: Pulaski statue, Hartford, Connecticut">
+        <img src="images/commons/pulaski-statue-hartford.jpg" loading="lazy" decoding="async" alt="General Pulaski equestrian statue, Hartford, Connecticut — photo by Kenneth C. Zirkel (CC0)" />
       </div>
-      <div class="lp-gallery-item" role="button" tabindex="0" data-src="images/Gen.CasimirPulaski.png" aria-label="Open photo: General Casimir Pulaski memorial">
-        <img src="images/Gen.CasimirPulaski.png" loading="lazy" decoding="async" alt="General Casimir Pulaski memorial medallion" />
+      <div class="lp-gallery-item" aria-label="Gallery slot — additional photography to be added"
+           style="aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#f3f1ea,#f3f1ea 10px,#ebe7d9 10px,#ebe7d9 20px);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#6b5a32;padding:1rem;text-align:center;font-family:'Inter',system-ui,sans-serif;border:1px dashed rgba(107,90,50,.35);">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="opacity:.55;margin-bottom:.5rem;"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 17l-5-5-4 4-3-3-6 6"/></svg>
+        <div style="font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-bottom:.25rem;">Placeholder</div>
+        <div style="font-size:.8125rem;line-height:1.35;max-width:18ch;">Additional committee-supplied photography</div>
       </div>
     </div>
 
@@ -869,17 +888,14 @@ img, video, iframe {
 
     </div><!-- /involve-why-grid -->
 
-    <!-- PSFCU Sponsor Banner -->
+    <!-- Sponsor Banner (logo suppressed in draft — third-party trademark) -->
     <div class="psfcu-banner">
-      <img src="images/polishslavic.jpg"
-           alt="Polish and Slavic Federal Credit Union logo"
-           class="psfcu-logo"
-           loading="lazy"
-           decoding="async">
+      <div class="psfcu-logo" role="img" aria-label="Sponsor logo placeholder"
+           style="display:flex;align-items:center;justify-content:center;background:#f3f1ea;border:1px dashed rgba(0,0,0,.2);color:#6b5a32;font-family:'Inter',system-ui,sans-serif;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;text-align:center;padding:.75rem;min-height:72px;">Sponsor logo<br/>(placeholder)</div>
       <div class="psfcu-text">
         <div class="psfcu-eyebrow">Official Sponsor &amp; Partner</div>
         <div class="psfcu-name">Polish &amp; Slavic Federal Credit Union</div>
-        <div class="psfcu-sub">Proudly supporting the Pulaski Day Parade and the Polish-American community.</div>
+        <div class="psfcu-sub">Proudly supporting the Pulaski Day Parade and the Polish-American community. <em style="opacity:.7;">(Logo omitted in this draft pending sponsor approval.)</em></div>
       </div>
       <a href="https://www.psfcu.com" target="_blank" rel="noopener" class="btn btn-gold">
         Visit psfcu.com →
@@ -1010,9 +1026,24 @@ img, video, iframe {
 
     </div>
 
+    <!-- Image credits (Wikimedia Commons) -->
+    <div class="image-credits" style="border-top:1px solid rgba(255,255,255,.1);margin-top:2.5rem;padding-top:1.75rem;">
+      <h4 style="font-size:.8125rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);margin:0 0 .75rem;">Image Credits</h4>
+      <p style="font-size:.75rem;line-height:1.55;color:rgba(255,255,255,.6);margin:0 0 .75rem;max-width:70ch;">All imagery on this draft is sourced from Wikimedia Commons. Public-domain works are credited as a courtesy; Creative Commons works are credited as required by their license.</p>
+      <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.35rem .75rem;font-size:.6875rem;line-height:1.5;color:rgba(255,255,255,.55);">
+        <li><em>Casimir Pulaski</em>, Great Generals series (N15), Allen &amp; Ginter (1888), The Metropolitan Museum of Art — <a href="https://creativecommons.org/publicdomain/zero/1.0/" style="color:rgba(255,255,255,.75);">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:Casimir_Pulaski,_from_the_Great_Generals_series_(N15)_for_Allen_%26_Ginter_Cigarettes_Brands_MET_DP834794.jpg" style="color:rgba(255,255,255,.75);">Wikimedia Commons</a></li>
+        <li><em>Kazimierz Pułaski</em> (postcard) by Jan Styka, 1918 — Public Domain · <a href="https://commons.wikimedia.org/wiki/File:Kazimierz_Pulaski_(75149889).jpg" style="color:rgba(255,255,255,.75);">Wikimedia Commons</a></li>
+        <li><em>General Pulaski statue, Hartford, Connecticut</em> by Kenneth C. Zirkel — <a href="https://creativecommons.org/publicdomain/zero/1.0/" style="color:rgba(255,255,255,.75);">CC0</a> · <a href="https://commons.wikimedia.org/wiki/File:General_Pulaski_statue,_Hartford,_Connecticut.jpg" style="color:rgba(255,255,255,.75);">Wikimedia Commons</a></li>
+        <li><em>Pulaski Day Parade 2023, New York City</em> by Jakub Hałun (2 photos) — <a href="https://creativecommons.org/licenses/by/4.0/" style="color:rgba(255,255,255,.75);">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Pulaski_Day_Parade,_New_York_City,_20231001_1424_1336.jpg" style="color:rgba(255,255,255,.75);">Photo 1</a> / <a href="https://commons.wikimedia.org/wiki/File:Pulaski_Day_Parade_2023_in_New_York_City,_20231001_1354_1190.jpg" style="color:rgba(255,255,255,.75);">Photo 2</a></li>
+        <li><em>Attack on Savannah, 10 October 1779</em> by Arthur I. Keller, National Archives — Public Domain · <a href="https://commons.wikimedia.org/wiki/File:Attack_on_Savannah,_10-08-1779_-_NARA_-_532940.jpg" style="color:rgba(255,255,255,.75);">Wikimedia Commons</a></li>
+        <li><em>Kazimierz Pułaski at Częstochowa during the Bar Confederation</em> by Józef Chełmoński — Public Domain · <a href="https://commons.wikimedia.org/wiki/File:Kazimierz_Pu%C5%82aski_at_Cz%C4%99stochowa_during_Bar_Confederation.PNG" style="color:rgba(255,255,255,.75);">Wikimedia Commons</a></li>
+        <li><em>Lubuski Song and Dance Ensemble in dąbrowieckie costumes, Zielona Góra (1974)</em> by Bogusław Linette — <a href="https://creativecommons.org/licenses/by-sa/3.0/pl/" style="color:rgba(255,255,255,.75);">CC BY-SA 3.0 PL</a> · <a href="https://commons.wikimedia.org/wiki/File:Lubuski_Zesp%C3%B3%C5%82_Pie%C5%9Bni_i_Ta%C5%84ca_w_strojach_d%C4%85browieckich_-_Zielona_G%C3%B3ra_-_000817n.jpg" style="color:rgba(255,255,255,.75);">Wikimedia Commons</a></li>
+      </ul>
+    </div>
+
     <div class="footer-bottom">
       <p>© 2026 General Casimir Pulaski Memorial Parade Committee, Inc. All rights reserved.</p>
-      <p>Built as a single-page demo</p>
+      <p>Draft mockup · Built as a single-page demo · <em>Not affiliated with the Parade Committee</em></p>
     </div>
   </div>
 </footer>
